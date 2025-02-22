@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+
+:root {
+    --color1: #FDEED1;
+    --color2: #FE2C1F;
+    --color3: #492000;
+    --color4: #FFD5D2;
+    --color5: #1C1C2E;
+    --border-radius: 20px;
+    --padding: 20px;
+}
+
+.load-screen {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color2);
+}
+
+.load-screen.invisible {
+    display: none;
+}
+
+.html {
+    overflow-y: hidden;
+}
+
+.html.overflow {
+    overflow-y: scroll;
+}
+
+body {
+    background-color: var(--color3);
+    width: 100%;
+    height: 100%;
+    border: none;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+a {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.heroArea, .container, .container-icon-link, .hero-welcome, .place-icon-link {
+    display: flex;
+    align-items: center;
+}
+.heroArea {
+    width: 100vw !important;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.container {
+    background-color: var(--color1);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    flex-direction: column;
+    justify-content: space-around;
+    position: fixed;
+    height: max-content;
+    width: 40px;
+    top: 50%;
+    left: 3%;
+    gap: 20px;
+    transform: translate(-10%, -50%);
+    z-index: 999;
+    transition-property: width;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.container:hover {
+    width: 80px;
+}
+
+.container img {
+    width: 30px;
+    border-radius: 5px;
+    transform: scale(2.5);
+    user-select: none;
+    margin: 10px 0px 0px 0px;
+    background: var(--color1);
+}
+
+.container-icon-link, .place-icon-link {
+    text-decoration: none;
+    padding: 20px;
+    width: 30px;
+    height: 30px;
+    height: max-content;
+    justify-content: center;
+    border-radius: 50%;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    pointer-events: auto;
+}
+
+.container-icon-link i {
+    font-size: 30px;
+    color: var(--color3);
+    transition-property: color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.container-icon-link:hover {
+    background: var(--color2);
+   
+}
+.container-icon-link:hover i {
+    color: var(--color1);
+}   
+
+.hero-background, .hero-welcome {
+    background-color: var(--color2);
+    width: 100%;
+    height: 50vh;
+    color: var(--color1);
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-welcome {
+    height: 40vh;
+    z-index: 2;
+}
+
+.hero-welcome div {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-background {
+    background-color: var(--color4);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: end;
+    height: 60vh;
+    position: relative;
+}
+
+.hero-background div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.scenaries {
+    position: absolute;
+    bottom: -1%;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+}
+
+.grasses {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+}
+
+.grass {
+    width: 25%;
+}
+
+.scenary {
+    width: 25%;
+    height: 100%;
+    user-select: none;
+    z-index: -1;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+
+.hero-welcome div {
+    width: 72%;
+    height: 100%;
+}
+
+.hero-welcome h3, .places-area h3 {
+    font-family: "Quicksand", serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3rem;
+    user-select: none;
+}
+

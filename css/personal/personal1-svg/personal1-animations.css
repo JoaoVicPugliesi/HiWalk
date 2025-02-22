@@ -1,0 +1,67 @@
+:root {
+    --color1: #FDEED1;
+    --color2: #FE2C1F;
+    --color3: #492000;
+    --color4: #FFD5D2;
+    --color5: #1C1C2E;
+    --border-radius: 20px;
+    --padding: 20px;
+}
+
+.sun {
+    position: absolute;
+    left: 45%;
+    bottom: 10%;
+    transform: translate(-5%, -50%);
+    z-index: 0;
+    transition-property: trasnform;
+    transition-timing-function: ease;
+}
+
+.clouds1, 
+.clouds2, 
+.clouds3 {
+    fill: var(--color1);
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+
+#cloud1, #cloud2, #cloud3 {
+    fill: var(--color1);
+}
+
+.clouds1 {
+    left: 60%;
+    top: 5%;
+}
+
+.clouds2 {
+    left: 30%;
+    top: 20%;
+}
+
+.clouds3 {
+    left: 0%;
+    top: 5%;
+}
+
+@keyframes cloudMovement {
+    from {
+        left: -20%;
+    }
+}
+
+.car {
+    position: absolute;
+    left: 15%;
+    bottom: -5%;
+    z-index: 3;
+    width: 250px;
+}
+
+.car.pause {
+    animation: none;
+}

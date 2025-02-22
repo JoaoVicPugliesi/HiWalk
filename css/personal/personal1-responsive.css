@@ -1,0 +1,196 @@
+@media (max-width: 1420px) {
+    svg:nth-child(4) {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-welcome h3, .places-area h3 {
+        font-size: 3em;
+    }
+
+    .about-welcome {
+        width: 72%;
+    }
+    
+    .about-welcome div {
+        justify-content: start;
+        align-items: center;
+    }
+    
+    .places-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-welcome h3 {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: max-content;
+        font-size: 30px;
+    }
+
+    .container {
+        width: 35px;
+    }
+    
+    .container:hover {
+        width: 60px;
+    }
+    
+    .container img {
+        width: 30px;
+    }
+    
+    .container-icon-link, .place-icon-link {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .container-icon-link i {
+        font-size: 30px;
+    }
+
+    .place-knowledge h3 {
+        font-size: 20px;
+        transform: translate3d(0, -4rem, 0);
+    }
+
+    .play-btn, .mute-btn {
+        padding: 15px;
+        width: 20px;
+        height: 20px;
+       
+    }
+    
+    .play-btn i, .mute-btn i {
+        font-size: 20px;
+    } 
+
+    .places-area-destinations {
+        justify-content: start;
+        align-items: start;
+    }
+
+    .places {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+@media (max-width: 1200px) {
+
+    .container img {
+        width: 25px;
+        margin: 5px 0px 0px 0px;
+    }
+
+    svg:nth-child(4) {
+        width: 120px;
+        height: 120px;
+    }
+
+    .container {
+        flex-direction: row;
+        width: max-content;
+        height: 40px;
+        top: 3%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+    }
+
+    .container:hover {
+        width: max-content;
+    }
+    
+    .place-knowledge h3 {
+        font-size: 20px;
+        transform: translate3d(0, -4rem, 0);
+    }    
+
+    .about-welcome div {
+        gap: 10px;
+    }
+
+    .about-welcome h3 {
+        font-size: 25px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .places-container {
+        width: 100%;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        display: block;
+    }
+
+    .about-welcome div {
+        gap: 10px;
+    }
+
+    .about-welcome h3 {
+        font-size: 20px;
+    }
+        
+    .container img {
+        width: 25px;
+    }
+    
+    .container-icon-link, .place-icon-link {
+        text-decoration: none;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .container-icon-link i {
+        font-size: 25px;
+    }
+
+    
+    .places {
+        width: max-content;
+        display: flex;
+        gap: 10px;
+        flex-wrap: nowrap;
+        overflow-x: scroll; 
+        padding-bottom: 10px; 
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin; 
+    }
+    
+
+    .place {
+        width: 12em;
+        height: 18em;
+    }
+
+    .place-knowledge h3 {
+        font-size: 18px;
+    }
+
+    .place-knowledge p {
+        font-size: 18px;
+    }
+
+    .place-icon-link {
+        color: var(--color1);
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        transition-property: transform, opacity;
+        transition-delay: 1s;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+        transform: translate3d(-5rem, 0, 0);
+        opacity: 0;
+    }
+    
+}
+
