@@ -1,4 +1,5 @@
-import scroll from "../personal-1-scroll.js";
+import scroll from "./personal-1-scroll.js";
+import changeContainer from "./personal-1-change-container.js";
 
 const parallax = () => {
     console.log('parallax');
@@ -11,22 +12,21 @@ const parallax = () => {
         const clouds3 = document.querySelectorAll('.cloud3');
         const sun = document.querySelector('.sun');
         
-
-
         scroll();
         window.addEventListener('scroll', function () {
+            changeContainer();
             let value = window.scrollY;
             scenaries.forEach(scenary => {
                 scenary.style.transform = `translateY(${value * 0.15 + '%'})`;
             });
             clouds1.forEach(clouds1 => {
-                clouds1.style.transform = `translate(${value * 0.04 + '%'}, ${value * 0.10 + '%'})`;
+                clouds1.style.transform = `translate(${value * 0.03 + '%'}, ${value * 0.10 + '%'})`;
             });
             clouds2.forEach(clouds2 => {
-                clouds2.style.transform = `translate(${value * 0.03 + '%'}, ${value * 0.10 + '%'})`;
+                clouds2.style.transform = `translate(${value * 0.02 + '%'}, ${value * 0.10 + '%'})`;
             });
             clouds3.forEach(clouds3 => {
-                clouds3.style.transform = `translate(${value * 0.02 + '%'}, ${value * 0.10 + '%'})`;
+                clouds3.style.transform = `translate(${value * 0.01 + '%'}, ${value * 0.10 + '%'})`;
             });
             sun.style.transform = `translateY(${value * 0.5 + '%'}`;
         });

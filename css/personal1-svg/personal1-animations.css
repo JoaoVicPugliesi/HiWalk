@@ -29,7 +29,8 @@
     transition-timing-function: ease;
 }
 
-#cloud1, #cloud2, #cloud3 {
+
+.cloud1, .cloud2, .cloud3 {
     fill: var(--color1);
 }
 
@@ -47,6 +48,7 @@
     left: 0%;
     top: 5%;
 }
+
 
 @keyframes cloudMovement {
     from {

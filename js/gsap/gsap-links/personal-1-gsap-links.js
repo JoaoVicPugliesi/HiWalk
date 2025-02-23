@@ -6,7 +6,7 @@ const links = document.querySelectorAll('a');
 const gsapLinks = () => {
     links.forEach(link => {
 
-        if(link.getAttribute('class') != 'logo') {
+        if(link.getAttribute('class') != 'logo' && link.getAttribute('class') != 'prev' && link.getAttribute('class') != 'next') {
             link.addEventListener('mousemove', activateLink);
             link.addEventListener('mouseleave', resetLink);
         }

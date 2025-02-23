@@ -7,10 +7,10 @@ const soundtrack = () => {
         if (!jazz || !playBtn || !muteBtn) return; 
         muteBtn.classList.add('invisible');
         /* 
-        playBtn.classList.add('invisible');
-        jazz.volume = 0.1;
-        jazz.loop = true;
-        jazz.play();
+            playBtn.classList.add('invisible');
+            jazz.volume = 0.1;
+            jazz.loop = true;
+            jazz.play();
         */
         playBtn.addEventListener('click', (e) => {
             e.preventDefault();

@@ -10,15 +10,17 @@ import parallax from './parallax/personal-1-parallax.js';
 import gsapCar from './gsap/gsap-svg/personal-1-gsap-car.js';
 import gsapSun from './gsap/gsap-svg/personal-1-gsap-sun.js';
 import gsapScroll from './gsap/gsap-scroll/personal-1-gsap-scroll.js';
+import displayPlaceInfo from './place/personal-1-place-info.js';
 
 
 includeIllustrations();
+renderingPlaces();
 gsapCar();
 gsapSun();
 parallax();
 load();
 soundtrack();
-renderingPlaces();
+displayPlaceInfo();
 select();
 click();
 callTypewriter();
