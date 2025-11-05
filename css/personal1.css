@@ -188,6 +188,7 @@ a {
     z-index: 1;
     width: 100%;
     display: flex;
+    user-select: none;
 }
 
 .grasses {

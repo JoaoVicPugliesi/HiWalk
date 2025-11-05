@@ -403,7 +403,14 @@
     z-index: 999;
 }
 
-.play-btn, .mute-btn {
+.manage-creation-container {
+    position: fixed;
+    right: 2%;
+    bottom: 90%;
+    z-index: 999;
+}
+
+.play-btn, .mute-btn, .create-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -416,16 +423,16 @@
     overflow: hidden;
 }
 
-.play-btn i, .mute-btn i {
+.play-btn i, .mute-btn i, .create-btn i {
     color: var(--color2);
     font-size: 20px;
 } 
 
-.play-btn.change, .mute-btn.change {
+.play-btn.change, .mute-btn.change, .create-btn.change {
     background-color: var(--color2);
 }
 
-.play-btn.change i, .mute-btn.change i {
+.play-btn.change i, .mute-btn.change i, .create-btn.change i {
     color: var(--color1);
 }
 
