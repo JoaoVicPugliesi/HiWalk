@@ -12,6 +12,7 @@ import gsapSun from './gsap/gsap-svg/personal-1-gsap-sun.js';
 import gsapScroll from './gsap/gsap-scroll/personal-1-gsap-scroll.js';
 import displayPlaceInfo from './place/personal-1-place-info.js';
 import displayPlaceCreate from './place/personal-1-place-create.js';
+import placeCreateHttp from './place/personal-1-place-create-http.js';
 
 
 includeIllustrations();
@@ -21,6 +22,7 @@ gsapSun();
 parallax();
 load();
 soundtrack();
+placeCreateHttp();
 displayPlaceInfo();
 displayPlaceCreate();
 select();
