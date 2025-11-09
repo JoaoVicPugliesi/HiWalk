@@ -20,10 +20,22 @@
                 <a class="place-create-close"><i class="fa-solid fa-xmark"></i></a>
                 <h3>Create Your Destination</h3>
                 <div class="place-create-inputs">
-                    <input type="text" name="name" placeholder="Name">
-                    <input type="text" name="image" placeholder="Image URL">
-                    <input type="text" name="description" placeholder="Description">
-                    <input type="text" name="price" placeholder="Price">
+                    <div class="place-create-input-container">
+                        <i class="fa-solid fa-signature"></i>
+                        <input type="text" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="place-create-input-container">
+                        <i class="fa-solid fa-image"></i>
+                        <input type="text" name="image" placeholder="Image URL" required>
+                    </div>
+                    <div class="place-create-input-container">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <input type="text" name="description" placeholder="Description" required>
+                    </div>
+                    <div class="place-create-input-container">
+                        <i class="fa-solid fa-tag"></i>
+                        <input type="text" name="price" placeholder="Price" required>
+                    </div>
                 </div>
                 <button type="submit">Create</button>
             </form>
@@ -103,7 +115,50 @@
                 <div class="place-info-container">
                     <a class="place-info-close"><i class="fa-solid fa-xmark"></i></a>
                     <div>
-                        <h3>N/A</h3>
+                        <div class="place-info-name-container">
+                            <h3>N/A</h3>
+                        </div>
+                        <div class="place-info-details-container">
+                            <div class="place-info-details">
+                                <div class="place-info-daily-price-details">
+                                    <h2>Daily Price: </h2>
+                                    <h3>100$</h3>
+                                </div>
+                                <div class="place-info-attribute-details">
+                                    <div>
+                                        <h2>Attributes:</h2>
+                                    </div>
+                                    <div>
+                                        <h3>#Cozy</h3>
+                                        <h3>#Expensive</h3>
+                                        <h3>#Unique</h3>
+                                    </div>
+                                </div>
+                                <div class="place-info-rating-details">
+                                    <h2>Rating: (0-5)</h2>
+                                    <h3>4.0</h3>
+                                </div>
+                            </div>
+                            <div class="place-info-calendar-container">
+                                <h2>How Many Days You Wanna Spend Here?</h2>
+                                <div class="place-info-calendar">
+                                    <div class="place-info-calendar-month-container">
+                                        <a class="place-info-calendar-month-prev"><i class="fa-solid fa-left-long"></i></a>
+                                        <h1 class="place-info-calendar-month"></h1>
+                                        <a class="place-info-calendar-month-next"><i class="fa-solid fa-right-long"></i></a>
+                                    </div>
+                                    <div class="place-info-calendar-month-days">
+                                    </div>
+                                </div>
+                                <div class="place-info-calendar-how-many-days-and-how-much">
+                                    <h4>Days: 0</h4>
+                                    <h4>To be paid: 0$</h4>
+                                </div>
+                                <div class="place-info-calendar-confirm-btn-container">
+                                    <button class="place-info-confirm-calendar-btn">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>  
                     <img src="" alt="">  
                 </div>

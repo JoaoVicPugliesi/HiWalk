@@ -64,7 +64,7 @@
 }
 
 .place-create-form {
-    width: 30%;
+    width: 500px;
     height: 60%;
     border-radius: 20px;
     background-color: var(--color1);
@@ -95,9 +95,26 @@
     align-items: center;
 }
 
+.place-create-input-container {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.place-create-inputs div i {
+    width: 20px;
+    font-size: 25px;
+    height: 20px;
+    color: var(--color3);
+    margin: 0px 5px 5px 0px;
+}
+
 .place-create-inputs input {
     margin: 0px 5px 10px 0px;
-    width: 70%;
+    width: 50%;
     background-color: var(--color2);
     padding: 10px;
     border: none;

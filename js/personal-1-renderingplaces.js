@@ -1,4 +1,4 @@
-import placesJSON from "./placesJSON.js";
+import placesJSON from "./data/placesJSON.js";
 
 const renderingPlaces = () => {
     const places = document.querySelector('.places');

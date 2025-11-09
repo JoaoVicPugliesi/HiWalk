@@ -13,6 +13,7 @@ import gsapScroll from './gsap/gsap-scroll/personal-1-gsap-scroll.js';
 import displayPlaceInfo from './place/personal-1-place-info.js';
 import displayPlaceCreate from './place/personal-1-place-create.js';
 import placeCreateHttp from './place/personal-1-place-create-http.js';
+import monthsNavigate from './month/personal-1-months-navigate.js';
 
 
 includeIllustrations();
@@ -30,6 +31,7 @@ click();
 callTypewriter();
 gsapScroll();
 gsapLinks();
+monthsNavigate();
 
 
 

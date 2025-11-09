@@ -1,4 +1,5 @@
 import placeInfoFind from "./personal-1-personal-place-info-find.js";
+
 const placeInfoMask = document.querySelector('.place-info-mask');
 const placeInfo = document.querySelector('.place-info');
 const placeH3 = document.querySelector('.place-info h3');
