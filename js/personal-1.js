@@ -11,6 +11,7 @@ import gsapCar from './gsap/gsap-svg/personal-1-gsap-car.js';
 import gsapSun from './gsap/gsap-svg/personal-1-gsap-sun.js';
 import gsapScroll from './gsap/gsap-scroll/personal-1-gsap-scroll.js';
 import displayPlaceInfo from './place/personal-1-place-info.js';
+import displayPlaceCreate from './place/personal-1-place-create.js';
 
 
 includeIllustrations();
@@ -21,6 +22,7 @@ parallax();
 load();
 soundtrack();
 displayPlaceInfo();
+displayPlaceCreate();
 select();
 click();
 callTypewriter();

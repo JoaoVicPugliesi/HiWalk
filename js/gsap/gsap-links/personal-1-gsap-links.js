@@ -6,7 +6,11 @@ const links = document.querySelectorAll('a');
 const gsapLinks = () => {
     links.forEach(link => {
 
-        if(link.getAttribute('class') != 'logo' && link.getAttribute('class') != 'prev' && link.getAttribute('class') != 'next') {
+        if(
+        link.getAttribute('class') != 'logo' 
+        && link.getAttribute('class') != 'prev' 
+        && link.getAttribute('class') != 'next' 
+        && link.getAttribute('class') != 'place-create-close') {
             link.addEventListener('mousemove', activateLink);
             link.addEventListener('mouseleave', resetLink);
         }

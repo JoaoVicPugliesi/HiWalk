@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
 
-
 :root {
     --color1: #FDEED1;
     --color2: #FE2C1F;
@@ -51,4 +50,92 @@
 
 .travels-container {
     height: 520px;
+}
+
+.place-create-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.500);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.place-create-form {
+    width: 30%;
+    height: 60%;
+    border-radius: 20px;
+    background-color: var(--color1);
+    display: flex;
+    position: relative;
+    color: var(--color2);
+    font-family: "Quicksand", serif;
+    text-transform: uppercase;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1rem;
+    user-select: none;
+}
+
+.place-create-container.block, .place-create-form.block {
+    display: flex;
+}
+
+.place-create-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.place-create-inputs input {
+    margin: 0px 5px 10px 0px;
+    width: 70%;
+    background-color: var(--color2);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    placeholder: var(--color1);
+    font-family: 'Lora', serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--color1);
+    outline: none;
+}
+
+::placeholder {
+  color: var(--color1);
+  opacity: 1; 
+}
+
+.place-create-close {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    cursor: pointer;
+    color: var(--color2)
+}
+
+.place-create-form button {
+    margin: 0px 5px 10px 0px;
+    width: 30%;
+    background-color: var(--color2);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    placeholder: var(--color1);
+    font-family: 'Quicksand', serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--color1);
+    outline: none;
 }
