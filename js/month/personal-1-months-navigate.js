@@ -6,31 +6,34 @@ const placeInfoCalendarMonthNext = document.querySelector('.place-info-calendar-
 const placeInfoCalendarMonthDays = document.querySelector('.place-info-calendar-month-days');
 
 const monthsNavigate = () => {
-    let current = 0;
-    const renderMonth = () => {
-        placeInfoCalendarMonth.textContent = monthsJSON[current].name;
-        placeInfoCalendarMonthDays.innerHTML = "";
-        monthsJSON[current].days.forEach(day => {
-            placeInfoCalendarMonthDays.innerHTML += `<div>${day}</div>`;
+   let current = 0;
+   const data = monthsJSON;
+   const renderMonth = () => {
+        placeInfoCalendarMonth.textContent = data[current].name;
+        placeInfoCalendarMonthDays.innerHTML = '';
+        data[current].days.forEach((day) => {
+            placeInfoCalendarMonthDays.innerHTML += `
+                <div>${day}</div>
+            `
         });
-    };
+   }
 
-    renderMonth();
-    placeInfoCalendarMonthPrev.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (current > 0) {
-            current--;
-            renderMonth();
-        }
-    });
+   renderMonth();
 
-    placeInfoCalendarMonthNext.addEventListener('click', (e) => {
+   placeInfoCalendarMonthNext.addEventListener('click', (e) => {
         e.preventDefault();
-        if (current < monthsJSON.length - 1) {
+        if(current < data.length - 1) {
             current++;
             renderMonth();
         }
-    });
+   })
+   placeInfoCalendarMonthPrev.addEventListener('click', (e) => {
+        e.preventDefault();
+        if(current > 0) {
+            current--;
+            renderMonth();
+        }
+   })
 }
 
 export default monthsNavigate;

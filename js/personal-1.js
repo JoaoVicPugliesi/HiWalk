@@ -14,6 +14,8 @@ import displayPlaceInfo from './place/personal-1-place-info.js';
 import displayPlaceCreate from './place/personal-1-place-create.js';
 import placeCreateHttp from './place/personal-1-place-create-http.js';
 import monthsNavigate from './month/personal-1-months-navigate.js';
+import travelsDrag from './travel/personal-1-travels-drag.js';
+import travelTranslate from './travel/personal-1-travels-translate.js';
 
 
 includeIllustrations();
@@ -32,8 +34,8 @@ callTypewriter();
 gsapScroll();
 gsapLinks();
 monthsNavigate();
-
-
+travelsDrag();
+travelTranslate();
 
 
 

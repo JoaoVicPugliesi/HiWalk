@@ -13,6 +13,8 @@ const gsapLinks = () => {
         && link.getAttribute('class') != 'place-create-close'
         && link.getAttribute('class') != 'place-info-calendar-month-prev'
         && link.getAttribute('class') != 'place-info-calendar-month-next'
+        && link.getAttribute('class') != 'travel-inner-container-icon'
+        && link.getAttribute('class') != 'travel-info-inner-container-icon'
         ) {
             link.addEventListener('mousemove', activateLink);
             link.addEventListener('mouseleave', resetLink);

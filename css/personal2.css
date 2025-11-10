@@ -120,6 +120,10 @@
     align-items: start;
 }
 
+.place-info img {
+    user-select: none;
+}
+
 .place-info-container > div:first-of-type {
     display: flex;
     justify-content: start;

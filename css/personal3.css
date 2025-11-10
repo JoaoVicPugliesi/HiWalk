@@ -13,12 +13,12 @@
 
 .calendar-area {
     width: 100%;
-    height: max-content;
+    height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     gap: 20px;
     align-items: center;
-    background-color: var(--color2);
+    background-color: var(--color5);
     flex-direction: column;
     color: var(--color1);
     position: relative;
@@ -155,4 +155,177 @@
     text-transform: uppercase;
     color: var(--color1);
     outline: none;
+}
+
+.travels-container {
+    padding: var(--padding);
+    width: 72%;
+    height: max-content;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.travel-container {
+    flex: 0 0 auto;
+    background-color: var(--color1);
+    width: 15em;
+    height: 22em;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden; 
+    margin: 20px 0px 0px 0px;
+}
+
+.travel-h3-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.travels-container::-webkit-scrollbar-track {
+    background: var(--color1);
+    border-radius: 10px;
+}
+
+.travels-container {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color3) var(--color1);
+}
+
+.travels-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.travel-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.travel-inner-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.500);
+    left: 90%;
+    top: 0%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    transition: left 0.6s ease-in-out;
+}
+
+.travel-inner-container.opened {
+    left: 0%;
+}
+
+.travel-inner-container-icon i {
+    transition: transform 0.3s ease-in-out;
+}
+
+.travel-inner-container.opened .travel-inner-container-icon i {
+    transform: rotate(180deg);
+}
+
+.travel-inner-container a {
+    color: var(--color1);
+    padding: 5px;
+    cursor: pointer;
+    width: max-content;
+    height: max-content;
+    text-align: center;
+}
+
+
+.travel-info-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color1);
+    left: 0%;
+    top: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    transition: top 0.6s ease-in-out 0s; 
+    transition-delay: 0.6s;
+}
+
+.travel-info-container.opened {
+    top: 0%;
+}
+
+.travel-info-inner-container i {
+    transition: transform 0.8s ease-in-out;
+    transition-delay: 0.6s;
+}
+
+.travel-info-container.opened .travel-info-inner-container i {
+    transform: rotate(180deg);
+}
+
+.travel-info-inner-container a {
+    cursor: pointer;
+    margin: 5px 0px 0px 0px;
+    width: max-content;
+    height: max-content;
+    text-align: center;
+    transform: rotate(180deg);
+}
+
+.travel-info-inner-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.travel-info-inner-details-container {
+    font-size: 15px;
+    color: var(--color3);
+    font-family: "Quicksand", serif;
+    user-select: none;
+}
+
+.travel-info-inner-buttons-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: var(--color3);
+    font-family: "Quicksand", serif;
+}
+
+.travel-info-inner-buttons-container button {
+    margin: 0px 5px 10px 0px;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color2);
+    placeholder: var(--color1);
+    font-family: 'Quicksand', serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--color1);
+    outline: none;
+    user-select: none;
+}
+
+.travel-info-inner-buttons-container button:first-of-type {
+    background-color: var(--color5);
 }

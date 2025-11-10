@@ -22,19 +22,19 @@
                 <div class="place-create-inputs">
                     <div class="place-create-input-container">
                         <i class="fa-solid fa-signature"></i>
-                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="text" name="name" placeholder="Name" required autocomplete="off">
                     </div>
                     <div class="place-create-input-container">
                         <i class="fa-solid fa-image"></i>
-                        <input type="text" name="image" placeholder="Image URL" required>
+                        <input type="text" name="image" placeholder="Image URL" required autocomplete="off">
                     </div>
                     <div class="place-create-input-container">
                         <i class="fa-solid fa-file-lines"></i>
-                        <input type="text" name="description" placeholder="Description" required>
+                        <input type="text" name="description" placeholder="Description" required autocomplete="off">
                     </div>
                     <div class="place-create-input-container">
                         <i class="fa-solid fa-tag"></i>
-                        <input type="text" name="price" placeholder="Price" required>
+                        <input type="text" name="price" placeholder="Price" required autocomplete="off">
                     </div>
                 </div>
                 <button type="submit">Create</button>
@@ -160,7 +160,7 @@
                             </div>
                         </div>
                     </div>  
-                    <img src="" alt="">  
+                    <img src="" alt="" draggable="false">  
                 </div>
             </div>
             <div class="places">
@@ -174,7 +174,28 @@
             <p class="section-calendar-p">Here you can find your scheduled travels.</p>
         </div>
         <div class="travels-container">
-            
+            <div class="travel-container">
+                <img src="./images/cities/amsterdam.jpeg" alt="" draggable="false">
+                <div class="travel-inner-container">
+                    <a class="travel-inner-container-icon" href=""><i class="fa-solid fa-arrow-left"></i></a>
+                </div>
+                <div class="travel-info-container">
+                    <div class="travel-info-inner-container">
+                        <a class="travel-info-inner-container-icon" href=""><i class="fa-solid fa-arrow-down"></i></a>
+                        <div class="travel-info-inner-details-container">
+                            <h3>To: Amsterdam</h3>
+                            <h3>How Many Days: 5</h3>
+                            <h3>To Be Paid: 1000$</h3>
+                            <h3>Starting Date: January 25</h3>
+                            <h3>Ending Date: Fabruary 15</h3>
+                        </div>
+                        <div class="travel-info-inner-buttons-container">
+                            <button>Update</button>
+                            <button>Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
