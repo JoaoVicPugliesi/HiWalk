@@ -1,0 +1,10 @@
+A -> {
+    "name": "Amsterdam",
+    "image": "...",
+    "description": "...",
+    "price": 5,
+} -> {
+    ...
+}
+B -> 
+C ->

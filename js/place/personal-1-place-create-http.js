@@ -2,25 +2,26 @@ const placeCreateForm = document.querySelector('.place-create-form');
 
 const placeCreateHttp = () => {
     if (!placeCreateForm) return;
+    const baseEndpoint = 'http://127.0.0.1:8000'
     placeCreateForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const formData = new FormData(placeCreateForm);
         const data = Object.fromEntries(formData.entries());
-        console.log(data);
+        const dataStringfied = JSON.stringify(data);
         try {
-            const response = await fetch('', {
+            const response = await fetch(`${baseEndpoint}/create_place`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: dataStringfied
             })
             if (!response.ok) throw new Error('HTTP error ' + response.status);
 
             const result = await response.json();
             console.log('Success:', result);
         } catch (err) {
-            console.error('Request failed:', err);
+            console.log(err);
         }
     })
 }

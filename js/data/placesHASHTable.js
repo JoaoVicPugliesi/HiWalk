@@ -1,0 +1,7 @@
+const placesHashTable = {
+    A: [
+        {
+            
+        },
+    ]
+}
