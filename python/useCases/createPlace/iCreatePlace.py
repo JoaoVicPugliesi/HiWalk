@@ -1,6 +1,8 @@
 from .iCreatePlaceDTO import validate_create_place_dto
+from hashTable.hashTable import HashTable;
+import json;
 
-def create_place(self, json):
+def create_place(self):
     content_length = int(self.headers['Content-Length']);
     if(content_length == 0): 
         self.send_response(411);
@@ -29,10 +31,10 @@ def create_place(self, json):
         self.wfile.flush();
         return
 
-    print("Validated DTO:", dto)
+    print("Validated DTO:", dto);
+    hashTable = HashTable();
     
-    
-
+    hashTable.insert(dto);
     self.send_response(201)
     self.send_header('Content-Type', 'application/json')
     self.send_header('Access-Control-Allow-Origin', '*')
