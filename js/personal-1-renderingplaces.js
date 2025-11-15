@@ -1,6 +1,19 @@
-import placesJSON from "./data/placesJSON.js";
+const renderingPlaces = async () => {
 
-const renderingPlaces = () => {
+    const baseEndpoint = 'http://127.0.0.1:8000';
+    let placesJSON = {};
+    try {
+        const response = await fetch(`${baseEndpoint}/places`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        placesJSON = await response.json();
+        
+    } catch(err) {
+        console.error(err);
+    }
     const places = document.querySelector('.places');
     const searchbar = document.querySelector('.searchbar');
     const prevBtn = document.querySelector('.prev');
