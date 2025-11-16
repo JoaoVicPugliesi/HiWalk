@@ -1,7 +1,7 @@
 from http.server import  HTTPServer, BaseHTTPRequestHandler;
 from useCases.createPlace.iCreatePlace import create_place;
 from useCases.getPlaces.iGetPlaces import get_places;
-
+from useCases.findPlace.iFindPlace import find_place;
 HOST = '127.0.0.1';
 PORT = 8000;
 
@@ -17,16 +17,21 @@ class Server(BaseHTTPRequestHandler):
         if(self.path == '/places'):
             get_places(self);
             return
-        self.send_response(404)
-        self.end_headers()
-        self.wfile.write(b'Endpoint not Found')
+        if self.path.startswith('/places/place/'):
+            print("➡️ PATH:", self.path)
+            id = self.path.split('/')[-1]
+            find_place(self, id)
+            return
+        self.send_response(404);
+        self.end_headers();
+        self.wfile.write(b'Endpoint not Found');
     def do_POST(self):
         if(self.path == '/create_place'):
             create_place(self);
             return
-        self.send_response(404)
-        self.end_headers()
-        self.wfile.write(b'Endpoint not Found')
+        self.send_response(404);
+        self.end_headers();
+        self.wfile.write(b'Endpoint not Found');
         
 server = HTTPServer((HOST, PORT), Server);
 print('🚀 server is running on http://127.0.0.1:8000');

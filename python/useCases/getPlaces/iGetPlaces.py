@@ -2,9 +2,9 @@ from hashTable.hashTable import HashTable;
 import json;
 
 def get_places(self):
-    table = HashTable();
+    hash_table = HashTable();
     all_places = [];
-    for letter, linked_list in table.buckets.items():
+    for letter, linked_list in hash_table.buckets.items():
         current = linked_list.head
         while current:
             all_places.append(current.data)

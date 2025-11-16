@@ -1,14 +1,27 @@
-import placesJSON from "../data/placesJSON.js";
+    const placeInfoFind = async (placeId) => {
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/places/place/${placeId}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
 
-const placesMap = placesJSON.reduce((acc, place) => {
-    acc[place.id] = place;
-    return acc;
-}, {})
+            if (!response.ok) {
+                throw new Error("Failed to fetch places");
+            }
 
-const placeInfoFind = (placeId) => {
-   // return placesJSON.find(place => place.id == placeId);
+            
+            const place = await response.json();
+            
+            console.log(place);
+            
+            return place || null;
 
-   return placesMap[placeId] || null;
-}
+        } catch (err) {
+            console.error(err);
+            return null;
+        }
+    }
 
-export default placeInfoFind;
+    export default placeInfoFind;

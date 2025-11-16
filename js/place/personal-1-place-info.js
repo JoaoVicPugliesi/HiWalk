@@ -11,7 +11,7 @@ const click = document.querySelector('.click-audio');
 
 const displayPlaceInfo = () => {
     document.addEventListener('DOMContentLoaded', () => {
-        document.addEventListener('click', (e) => {
+        document.addEventListener('click', async (e) => {
             if(e.target.closest('.place-icon-link')) {
 
                 e.preventDefault();
@@ -24,11 +24,11 @@ const displayPlaceInfo = () => {
 
                 // Algorithm to display the correct place on the placeInfo div...
 
-                let place = placeInfoFind(placeId);
+                let place = await placeInfoFind(placeId);
 
                 placeH3.textContent = place.name;
                 placeImg.src = place.image;
-                placePrice.textContent = place.price;
+                placePrice.textContent = `${place.price}` + '$';
 
                 html.classList.remove('overflow');
                 placeInfoMask.classList.add('block');
