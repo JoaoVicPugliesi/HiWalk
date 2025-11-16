@@ -5,5 +5,12 @@
     "image": "https://i.pinimg.com/originals/ff/87/9d/ff879d3e484e169c11f2746d5f9ca957.jpg",
     "description": "The City of Light. Where millions of people wish to visit at least once.",
     "price": 1000
+  },
+  {
+    "id": 4,
+    "name": "Pequim",
+    "image": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQwql1pPq4VWuFAPIR6ugTVqiLJCF3LbOe-_9CQyDpQMVnYsNG2lSI5QpjudB03hRxtYciihSoxsp-vl1gcmICOfsk&s=19",
+    "description": "Pequim, a enorme capital da China, tem uma história de 3 milênios. No entanto, ela é tão conhecida p",
+    "price": 240
   }
 ]
