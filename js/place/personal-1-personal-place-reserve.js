@@ -26,66 +26,31 @@ const clearSelections = () => {
         .forEach(div => div.classList.remove('selected'));
 };
 
-const reservePlace = () => {
-    placeMonthDays.addEventListener('click', (e) => {
-        if (!e.target.classList.contains('place-info-calendar-month-days-div'))
-            return;
+const reservePlace = async () => {
+    e.preventDefault();
 
-        const day = parseInt(e.target.textContent);
-        const currentMonth = placeMonth.textContent.toLowerCase();
+   
+ const reservePlace = ( ) => {
+    const placeBtn = document.getElementById('place-btn-id'); 
+    placeBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
 
-        if (selectingStart) {
-            DTO.starting_day = day;
-            DTO.starting_month = currentMonth;
+      
+        const response = await fetch('http://127.0.0.1:5000/place/reserve', {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(DTO )
+        });
 
-            selectedMonths.push(currentMonth);
-            DTO.months = [...selectedMonths];
-
-            clearSelections();
-            e.target.classList.add('selected');
-
-            selectingStart = false;
-            hasSelectedStart = true;
-
-            return;
-        }
-
-        if (!selectingStart && hasSelectedStart) {
-            DTO.ending_day = day;
-            DTO.ending_month = currentMonth;
-            if (DTO.starting_month === currentMonth) {
-                if (day <= DTO.starting_day) {
-                    alert('Ending day must be after starting day.');
-                    return;
-                }
-
-                DTO.days = day - DTO.starting_day;
-            }
-            else {
-                if (!selectedMonths.includes(currentMonth)) {
-                    selectedMonths.push(currentMonth);
-                }
-
-                DTO.months = [...selectedMonths];
-
-                DTO.days =
-                    (31 - DTO.starting_day) + 
-                    DTO.ending_day;           
-            }
-
-            const price = parseInt(placePrice.textContent);
-            DTO.to_be_paid = DTO.days * price;
-
-            e.target.classList.add('selected');
-
-            placeHowManyDays.textContent = 'days: ' + DTO.days;
-            placeHowMuch.textContent = 'To be paid: ' + DTO.to_be_paid;
-
-            selectingStart = true;
-
-            return;
+        if (response.ok) {
+            const data = await response.json();
+            console.log("Reserva feita com sucesso!", data);
+        } else {
+            console.error("Falha ao fazer a reserva.");
         }
     });
+};
 
 
 placeBtn.addEventListener('click', async (e) => {
