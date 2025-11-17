@@ -87,11 +87,52 @@ const reservePlace = () => {
         }
     });
 
-    placeBtn.addEventListener('click', async (e) => {
-        e.preventDefault();
+    // Assumindo que 'placeBtn' e 'DTO' já foram definidos no seu código
+// Exemplo de como eles poderiam ser:
+// const placeBtn = document.getElementById('seu-botao-id');
+// const DTO = { nome: "Exemplo", valor: 123 };
 
-        console.log(DTO)
-    });
+placeBtn.addEventListener('click', async (e) => {
+
+    e.preventDefault();
+
+    const endpoint = 'http://127.0.0.1:8000'; 
+
+    try {
+        console.log('Enviando os seguintes dados (DTO ):', DTO);
+
+   
+        const resposta = await fetch(endpoint, {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json' 
+            },
+         
+            body: JSON.stringify(DTO)
+        });
+
+       
+        if (!resposta.ok) {
+            // S
+            const erroTexto = await resposta.text();
+            throw new Error(`Erro do servidor: ${resposta.status} - ${erroTexto}`);
+        }
+
+      
+        const dadosDaResposta = await resposta.json();
+
+        console.log('Sucesso! Resposta recebida:', dadosDaResposta);
+        alert('Operação concluída com sucesso!');
+        
+
+
+    } catch (erro) {
+
+        console.error('Falha na operação:', erro);
+        alert('Houve um problema ao realizar a operação. Verifique o console para mais detalhes.');
+    }
+});
+
 };
 
 export default reservePlace;
