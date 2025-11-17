@@ -87,10 +87,6 @@ const reservePlace = () => {
         }
     });
 
-    // Assumindo que 'placeBtn' e 'DTO' já foram definidos no seu código
-// Exemplo de como eles poderiam ser:
-// const placeBtn = document.getElementById('seu-botao-id');
-// const DTO = { nome: "Exemplo", valor: 123 };
 
 placeBtn.addEventListener('click', async (e) => {
 
