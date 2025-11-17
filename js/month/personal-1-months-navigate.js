@@ -1,4 +1,5 @@
 import monthsJSON from "../data/monthsJSON.js";
+import reservePlace from "../place/personal-1-personal-place-reserve.js";
 
 const placeInfoCalendarMonth = document.querySelector('.place-info-calendar-month');
 const placeInfoCalendarMonthPrev = document.querySelector('.place-info-calendar-month-prev');
@@ -13,11 +14,12 @@ const monthsNavigate = () => {
         placeInfoCalendarMonthDays.innerHTML = '';
         data[current].days.forEach((day) => {
             placeInfoCalendarMonthDays.innerHTML += `
-                <div>${day}</div>
+                <div class="place-info-calendar-month-days-div">${day}</div>
             `
         });
-   }
-
+    }
+    
+   reservePlace();
    renderMonth();
 
    placeInfoCalendarMonthNext.addEventListener('click', (e) => {

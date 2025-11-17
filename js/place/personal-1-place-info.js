@@ -15,7 +15,7 @@ const displayPlaceInfo = () => {
             if(e.target.closest('.place-icon-link')) {
 
                 e.preventDefault();
-                let placeId = e.target.closest('.place-icon-link').dataset.placeId;
+                const placeId = e.target.closest('.place-icon-link').dataset.placeId;
 
                 window.scrollTo({
                     top: destinations.offsetTop,
@@ -24,8 +24,9 @@ const displayPlaceInfo = () => {
 
                 // Algorithm to display the correct place on the placeInfo div...
 
-                let place = await placeInfoFind(placeId);
+                const place = await placeInfoFind(placeId);
 
+                localStorage.setItem('current-place-id', place.id.toString());
                 placeH3.textContent = place.name;
                 placeImg.src = place.image;
                 placePrice.textContent = `${place.price}` + '$';

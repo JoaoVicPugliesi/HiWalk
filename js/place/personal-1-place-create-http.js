@@ -2,14 +2,14 @@ const placeCreateForm = document.querySelector('.place-create-form');
 
 const placeCreateHttp = () => {
     if (!placeCreateForm) return;
-    const baseEndpoint = 'http://127.0.0.1:8000'
+    const baseEndpoint = 'http://127.0.0.1:8000';
     placeCreateForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const formData = new FormData(placeCreateForm);
         const data = Object.fromEntries(formData.entries());
         const dataStringfied = JSON.stringify(data);
         try {
-            const response = await fetch(`${baseEndpoint}/create_place`, {
+            const response = await fetch(`${baseEndpoint}/place/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

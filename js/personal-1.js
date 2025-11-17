@@ -17,7 +17,6 @@ import monthsNavigate from './month/personal-1-months-navigate.js';
 import travelsDrag from './travel/personal-1-travels-drag.js';
 import travelTranslate from './travel/personal-1-travels-translate.js';
 
-
 includeIllustrations();
 renderingPlaces();
 gsapCar();
@@ -36,6 +35,5 @@ gsapLinks();
 monthsNavigate();
 travelsDrag();
 travelTranslate();
-
 
 

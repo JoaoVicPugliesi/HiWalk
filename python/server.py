@@ -2,6 +2,7 @@ from http.server import  HTTPServer, BaseHTTPRequestHandler;
 from useCases.createPlace.iCreatePlace import create_place;
 from useCases.getPlaces.iGetPlaces import get_places;
 from useCases.findPlace.iFindPlace import find_place;
+from useCases.createReserve.iCreateReserve import create_reserve;
 HOST = '127.0.0.1';
 PORT = 8000;
 
@@ -18,7 +19,6 @@ class Server(BaseHTTPRequestHandler):
             get_places(self);
             return
         if self.path.startswith('/places/place/'):
-            print("➡️ PATH:", self.path)
             id = self.path.split('/')[-1]
             find_place(self, id)
             return
@@ -26,8 +26,11 @@ class Server(BaseHTTPRequestHandler):
         self.end_headers();
         self.wfile.write(b'Endpoint not Found');
     def do_POST(self):
-        if(self.path == '/create_place'):
+        if(self.path == '/place/create'):
             create_place(self);
+            return
+        if(self.path == '/place/reserve'):
+            create_reserve(self);
             return
         self.send_response(404);
         self.end_headers();

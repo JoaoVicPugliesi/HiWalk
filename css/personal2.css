@@ -246,7 +246,7 @@
     font-family: "Quicksand", serif;
 }
 
-.place-info-calendar-month-days div {
+.place-info-calendar-month-days-div {
     font-size: 15px;
     width: 10%;
     color: var(--color1);
@@ -256,6 +256,10 @@
     border-radius: 5px;
     cursor: pointer;
     user-select: none;
+}
+
+.place-info-calendar-month-days-div.selected {
+    background-color: var(--color3);
 }
 
 .place-info-calendar-how-many-days-and-how-much {

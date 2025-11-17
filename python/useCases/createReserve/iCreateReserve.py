@@ -1,5 +1,4 @@
 from .iCreateReserveDTO import validate_create_reservation_dto
-from queue.queue import Queue
 import json
 
 def create_reserve(self):
