@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "place_id": 1,
+    "starting_month": "january",
+    "ending_month": "january",
+    "starting_day": 28,
+    "ending_day": 31,
+    "days": 3,
+    "months": [
+      "january"
+    ],
+    "to_be_paid": 3000
+  }
+]

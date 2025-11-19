@@ -1,5 +1,5 @@
 import monthsJSON from "../data/monthsJSON.js";
-import reservePlace from "../place/personal-1-personal-place-reserve.js";
+import enqueueReservation from "../reservation/personal-1-personal-place-reservation-enqueue.js";
 
 const placeInfoCalendarMonth = document.querySelector('.place-info-calendar-month');
 const placeInfoCalendarMonthPrev = document.querySelector('.place-info-calendar-month-prev');
@@ -19,7 +19,7 @@ const monthsNavigate = () => {
         });
     }
     
-   reservePlace();
+   enqueueReservation();
    renderMonth();
 
    placeInfoCalendarMonthNext.addEventListener('click', (e) => {

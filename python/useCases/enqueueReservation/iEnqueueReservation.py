@@ -1,8 +1,8 @@
-from .iCreateReserveDTO import validate_create_reservation_dto
+from .iEnqueueReservationDTO import validate_enqueue_reservation_dto
 from iQueue.queue import Queue;
 import json
 
-def create_reserve(self):
+def enqueue_reservation(self):
     # Verifica se há conteúdo na requisição
     content_length = int(self.headers['Content-Length'])
     if content_length == 0: 
@@ -22,7 +22,7 @@ def create_reserve(self):
     
     # Valida os dados usando o DTO
     try:
-        dto = validate_create_reservation_dto(data)
+        dto = validate_enqueue_reservation_dto(data)
     except (TypeError, ValueError) as err:
         self.send_response(422)
         self.send_header('Content-Type', 'application/json')
@@ -38,8 +38,8 @@ def create_reserve(self):
     print(dto);
     
     # Armazena na Queue
-    # queue = Queue()
-    # queue.enqueue(dto)
+    queue = Queue()
+    queue.enqueue(dto)
     
     # Resposta de sucesso
     self.send_response(201)

@@ -2,7 +2,7 @@ import json
 import os
 from typing import Optional, Any
 
-STORAGE_DIR = os.path.join(os.path.dirname(__file__), 'queue_storage')
+STORAGE_DIR = os.path.join(os.path.dirname(__file__), 'storage')
 RESERVATION_QUEUE_FILE = os.path.join(STORAGE_DIR, 'reservations.json')
 ID_COUNTER_FILE = os.path.join(STORAGE_DIR, 'reservation_last_id.txt')
 
@@ -45,7 +45,7 @@ class Queue:
             
             # Reconstroi a fila a partir dos dados
             for item in data:
-                self.enqueue(item, save=False)  # Não salva durante o carregamento
+                self.enqueue(item, save=False, has_id=True)  # Não salva durante o carregamento
                 
         except (json.JSONDecodeError, FileNotFoundError):
             # Se o arquivo estiver corrompido, começa com fila vazia
@@ -60,39 +60,63 @@ class Queue:
         with open(RESERVATION_QUEUE_FILE, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
-    def enqueue(self, reservation: dict, save: bool = True) -> None:
-        """Adiciona uma reserva ao final da fila"""
-        # Adiciona ID à reserva
-        reservation_with_id = { "id": self._get_next_id(), **reservation }
-        
-        new_node = Node(reservation_with_id)
-        
+    def enqueue(self, reservation: dict, save: bool = True, has_id: bool = False) -> None:
+        # Generate ID only if the reservation does not already have one
+        if not has_id:
+            reservation = { "id": self._get_next_id(), **reservation }
+
+        new_node = Node(reservation)
+
         if self.rear is None:
             self.front = self.rear = new_node
         else:
             self.rear.next = new_node
             self.rear = new_node
-            
+
         self.size += 1
-        
+
         if save:
             self._save_to_storage()
 
+    def _shift_ids_down(self):
+        """Decrementa todos os IDs em 1 e ajusta o contador"""
+        current = self.front
+        while current:
+            current.data['id'] -= 1
+            current = current.next
+
+        # Atualizar arquivo reservation_last_id.txt
+        if os.path.exists(ID_COUNTER_FILE):
+            with open(ID_COUNTER_FILE, 'r') as f:
+                current_id = int(f.read())
+
+            # Evitar número negativo
+            new_id = max(current_id - 1, 0)
+
+            with open(ID_COUNTER_FILE, 'w') as f:
+                f.write(str(new_id))
+
     def dequeue(self) -> Optional[dict]:
-        """Remove e retorna a reserva do início da fila"""
+        """Remove e retorna a reserva do início da fila e atualiza os IDs restantes"""
         if self.is_empty():
             return None
-            
-        temp = self.front
+
+        # Remove o primeiro item
+        removed = self.front
         self.front = self.front.next
-        
+
         if self.front is None:
             self.rear = None
-            
+
         self.size -= 1
+
+        # Agora precisamos reajustar os IDs
+        self._shift_ids_down()
+
+        # Salvar fila atualizada
         self._save_to_storage()
-        
-        return temp.data
+
+        return removed.data
 
     def peek(self) -> Optional[dict]:
         """Retorna a reserva do início da fila sem remover"""
@@ -117,12 +141,15 @@ class Queue:
             current = current.next
         return result
 
-    def display(self) -> None:
-        """Exibe todas as reservas na fila (para debug)"""
+    def display(self) -> list:
+        """Retorna todas as reservas na fila como lista JSON-serializável"""
+        result = []
         current = self.front
         while current:
-            print(f"Reserva ID: {current.data['id']} - Place: {current.data.get('place_id', 'N/A')}")
+            result.append(current.data)
             current = current.next
+        return result
+        
 '''
 import json
 import os

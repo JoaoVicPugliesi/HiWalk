@@ -26,7 +26,7 @@ const clearSelections = () => {
         .forEach(div => div.classList.remove('selected'));
 };
 
-const reservePlace = () => {
+const enqueueReservation = () => {
     placeMonthDays.addEventListener('click', (e) => {
         if (!e.target.classList.contains('place-info-calendar-month-days-div'))
             return;
@@ -91,7 +91,7 @@ const reservePlace = () => {
         e.preventDefault();
         console.log(DTO);
         try {
-            const req = await fetch('http://127.0.0.1:8000/place/reserve', {
+            const req = await fetch('http://127.0.0.1:8000/reservation/enqueue', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -106,4 +106,4 @@ const reservePlace = () => {
     });
 };
 
-export default reservePlace;
+export default enqueueReservation;

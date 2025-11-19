@@ -1,4 +1,4 @@
-const travelsDrag = () => {
+const reservationsDrag = () => {
     const travelsContainer = document.querySelector('.travels-container');
 
     let isDown = false;
@@ -30,4 +30,4 @@ const travelsDrag = () => {
 
 }
 
-export default travelsDrag;
+export default reservationsDrag;

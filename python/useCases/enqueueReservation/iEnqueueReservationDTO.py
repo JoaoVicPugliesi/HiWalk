@@ -1,6 +1,6 @@
 from typing import TypedDict
 
-class CreateReservationDTO(TypedDict):
+class EnqueueReservationDTO(TypedDict):
     place_id: int
     starting_month: str
     ending_month: str | None
@@ -10,7 +10,7 @@ class CreateReservationDTO(TypedDict):
     months: list[str]
     to_be_paid: int
 
-def validate_create_reservation_dto(data: dict) -> CreateReservationDTO:
+def validate_enqueue_reservation_dto(data: dict) -> EnqueueReservationDTO:
     required_fields = ['place_id', 'starting_month', 'ending_month', 'starting_day', 'ending_day', 'days', 'months', 'to_be_paid']
 
     # Verifica campos obrigatórios
@@ -72,7 +72,7 @@ def validate_create_reservation_dto(data: dict) -> CreateReservationDTO:
     if to_be_paid < 0:
         raise ValueError('to_be_paid cannot be negative')
 
-    return CreateReservationDTO(
+    return EnqueueReservationDTO(
         place_id=place_id,
         starting_month=start_month,
         ending_month=end_month,

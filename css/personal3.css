@@ -27,6 +27,7 @@
 .calendar-area-travels {
     width: 72%;
     display: flex;
+    height: 30%;
     justify-content: start;
     align-items: start;
     flex-direction: column;
@@ -160,7 +161,7 @@
 .travels-container {
     padding: var(--padding);
     width: 72%;
-    height: max-content;
+    height: 60%;
     display: flex;
     justify-content: start;
     align-items: start;
@@ -168,8 +169,14 @@
     overflow-x: auto;
     overflow-y: hidden;
     flex-wrap: nowrap;
+    scrollbar-color: var(--color1);
     scroll-behavior: smooth;
     padding-bottom: 10px;
+}
+
+.travels-container-no-reservation {
+    font-size: 2rem;
+    font-family: "Quicksand", serif;
 }
 
 .travel-container {
@@ -181,6 +188,7 @@
     position: relative;
     overflow: hidden; 
     margin: 20px 0px 0px 0px;
+    user-select: none;
 }
 
 .travel-h3-container {
@@ -190,13 +198,13 @@
 }
 
 .travels-container::-webkit-scrollbar-track {
-    background: var(--color1);
+    background: var(--color3);
     border-radius: 10px;
 }
 
 .travels-container {
     scrollbar-width: thin;
-    scrollbar-color: var(--color3) var(--color1);
+    scrollbar-color: var(--color1) var(--color1);
 }
 
 .travels-container::-webkit-scrollbar {
@@ -291,7 +299,7 @@
 
 
 .travel-info-inner-details-container {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--color3);
     font-family: "Quicksand", serif;
     user-select: none;
@@ -328,4 +336,26 @@
 
 .travel-info-inner-buttons-container button:first-of-type {
     background-color: var(--color5);
+}
+
+.travel-dequeue-btn-container {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.travel-dequeue-btn {
+    width: 20%;
+    height: 50%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color1);
+    color: var(--color3);
+    font-family: 'Quicksand', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
 }
