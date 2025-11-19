@@ -1,15 +1,13 @@
 const renderingPlaces = async () => {
-
-    const baseEndpoint = 'http://127.0.0.1:8000';
     let placesJSON = {};
     try {
-        const response = await fetch(`${baseEndpoint}/places`, {
+        const req = await fetch('http://127.0.0.1:8000/places', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
         });
-        placesJSON = await response.json();
+        placesJSON = await req.json();
         
     } catch(err) {
         console.error(err);

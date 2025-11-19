@@ -1,4 +1,5 @@
 from .iCreateReserveDTO import validate_create_reservation_dto
+from iQueue.queue import Queue;
 import json
 
 def create_reserve(self):
@@ -34,10 +35,11 @@ def create_reserve(self):
         return
 
     print("Validated Reservation DTO:", dto)
+    print(dto);
     
     # Armazena na Queue
-    Queue = Queue()
-    Queue.enqueue(dto)
+    # queue = Queue()
+    # queue.enqueue(dto)
     
     # Resposta de sucesso
     self.send_response(201)

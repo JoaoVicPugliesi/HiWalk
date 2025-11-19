@@ -66,15 +66,8 @@ def validate_create_reservation_dto(data: dict) -> CreateReservationDTO:
     start_month = data["starting_month"].lower()
     end_month = data["ending_month"].lower() if data["ending_month"] else start_month
 
-    if starting_day > ending_day:
-        raise ValueError('starting_day cannot be greater than ending_day')
     if days < 1:
         raise ValueError('days must be at least 1')
-
-    # Verifica se o número de dias corresponde à diferença entre as datas
-    calculated_days = ending_day - starting_day + 1
-    if days != calculated_days:
-         raise ValueError(f'days ({days}) does not match calculated stay duration ({calculated_days})')
 
     if to_be_paid < 0:
         raise ValueError('to_be_paid cannot be negative')

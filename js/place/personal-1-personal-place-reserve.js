@@ -89,8 +89,20 @@ const reservePlace = () => {
 
     placeBtn.addEventListener('click', async (e) => {
         e.preventDefault();
-
-        console.log(DTO)
+        console.log(DTO);
+        try {
+            const req = await fetch('http://127.0.0.1:8000/place/reserve', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(DTO)
+            });
+            const response = await req.json();
+            console.log(response);
+        } catch(err) {
+            console.error(err);
+        }
     });
 };
 
