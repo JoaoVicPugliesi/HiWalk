@@ -19,7 +19,7 @@ class Queue:
         self._load_from_storage()
 
     def _get_next_id(self) -> int:
-        """Gera o próximo ID para a reserva"""
+        '''Gera o próximo ID para a reserva'''
         if not os.path.exists(ID_COUNTER_FILE):
             with open(ID_COUNTER_FILE, 'w') as f:
                 f.write('0')
@@ -35,7 +35,7 @@ class Queue:
         return new_id
 
     def _load_from_storage(self):
-        """Carrega as reservas do arquivo JSON"""
+        '''Carrega as reservas do arquivo JSON'''
         if not os.path.exists(RESERVATION_QUEUE_FILE):
             return
 
@@ -52,7 +52,7 @@ class Queue:
             pass
 
     def _save_to_storage(self):
-        """Salva toda a fila no arquivo JSON"""
+        '''Salva toda a fila no arquivo JSON'''
         if not os.path.exists(STORAGE_DIR):
             os.makedirs(STORAGE_DIR)
 
@@ -63,7 +63,7 @@ class Queue:
     def enqueue(self, reservation: dict, save: bool = True, has_id: bool = False) -> None:
         # Generate ID only if the reservation does not already have one
         if not has_id:
-            reservation = { "id": self._get_next_id(), **reservation }
+            reservation = { 'id': self._get_next_id(), **reservation }
 
         new_node = Node(reservation)
 
@@ -78,8 +78,25 @@ class Queue:
         if save:
             self._save_to_storage()
 
+    def is_conflicting(self, dto):
+        # Verifica se há conflito de schedule #
+        current = self.front
+
+        while current:
+            if self._dates_overlap(current.data, dto):
+                return True
+            current = current.next
+
+        return False
+
+    def _dates_overlap(self, a, b):
+        if a['starting_month'] != b['starting_month']:
+            return False
+        
+        return not (a['ending_day'] < b['starting_day'] or
+                    b['ending_day'] < a['starting_day'])
     def _shift_ids_down(self):
-        """Decrementa todos os IDs em 1 e ajusta o contador"""
+        # Decrementa todos os IDs em 1 e ajusta o contador #
         current = self.front
         while current:
             current.data['id'] -= 1
@@ -97,7 +114,7 @@ class Queue:
                 f.write(str(new_id))
 
     def dequeue(self) -> Optional[dict]:
-        """Remove e retorna a reserva do início da fila e atualiza os IDs restantes"""
+        # Remove e retorna a reserva do início da fila e atualiza os IDs restantes #
         if self.is_empty():
             return None
 
@@ -119,21 +136,21 @@ class Queue:
         return removed.data
 
     def peek(self) -> Optional[dict]:
-        """Retorna a reserva do início da fila sem remover"""
+        #Retorna a reserva do início da fila sem remover#
         if self.is_empty():
             return None
         return self.front.data
 
     def is_empty(self) -> bool:
-        """Verifica se a fila está vazia"""
+        #Verifica se a fila está vazia#
         return self.front is None
 
     def get_size(self) -> int:
-        """Retorna o tamanho da fila"""
+        #Retorna o tamanho da fila#
         return self.size
 
     def to_list(self) -> list:
-        """Converte a fila para lista (para serialização)"""
+        #Converte a fila para lista (para serialização)#
         result = []
         current = self.front
         while current:
@@ -142,7 +159,7 @@ class Queue:
         return result
 
     def display(self) -> list:
-        """Retorna todas as reservas na fila como lista JSON-serializável"""
+        # Retorna todas as reservas na fila como lista JSON-serializável#
         result = []
         current = self.front
         while current:
@@ -150,63 +167,3 @@ class Queue:
             current = current.next
         return result
         
-'''
-import json
-import os
-from hashTable.linkedList import Node
-
-
-
-QUEUE_DIR = os.path.join(os.path.dirname(__file__), 'queue_storage')
-
-class Queue:
-    def __init__(self):
-        self.head = None
-        self.tail = None
-        self.size = 0
-    
-    def is_empty(self):
-        return self.size == 0
-    
-    #Método de enfileirar, para receber as reservas
-    def enqueue(self, data):
-        new_node = Node(self, data)
-
-        if self.is_empty():
-            self.head = new_node
-            self.tail = new_node
-            self.size += 1
-            return
-        
-        self.tail.next = new_node
-        self.tail = new_node
-        self.size += 1
-    
-    #Método para desenfileirar, remover apenas um item da fila
-    def dequeue(self):
-        if self.is_empty():
-            return None
-        if self.size == 1:
-            removed = self.head
-            self.head = None
-            self.tail = None
-            self.size -=1
-            return removed 
-        
-        removed = self.head
-        self.head = self.head.next
-        self.size -=1
-        return removed
-
-    #Método para limpar fila, excluindo todos os dados
-    def clearQueue (self):
-        
-        if self.is_empty():
-            return
-        
-        self.head = None
-        self.tail = None
-        self.size = 0
-        
-'''   
-

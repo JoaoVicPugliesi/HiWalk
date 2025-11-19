@@ -4,48 +4,59 @@ import json
 
 def enqueue_reservation(self):
     # Verifica se há conteúdo na requisição
-    content_length = int(self.headers['Content-Length'])
+    content_length = int(self.headers['Content-Length']);
     if content_length == 0: 
-        self.send_response(411)
-        self.end_headers()
-        return
+        self.send_response(411);
+        self.end_headers();
+        return;
     
     # Lê e decodifica os dados JSON
     post_data = self.rfile.read(content_length)
     try:
-        data = json.loads(post_data.decode('utf-8'))
+        data = json.loads(post_data.decode('utf-8'));
     except json.JSONDecodeError:
-        self.send_response(400)
-        self.end_headers()
-        self.wfile.write(b'Invalid JSON')
-        return
+        self.send_response(400);
+        self.end_headers();
+        self.wfile.write(b'Invalid JSON');
+        return;
     
     # Valida os dados usando o DTO
     try:
-        dto = validate_enqueue_reservation_dto(data)
+        dto = validate_enqueue_reservation_dto(data);
     except (TypeError, ValueError) as err:
-        self.send_response(422)
-        self.send_header('Content-Type', 'application/json')
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.end_headers()
-        error_response = {'error': str(err)}
-        body = json.dumps(error_response).encode('utf-8')
-        self.wfile.write(body)
-        self.wfile.flush()
+        self.send_response(422);
+        self.send_header('Content-Type', 'application/json');
+        self.send_header('Access-Control-Allow-Origin', '*');
+        self.end_headers();
+        error_response = {'error': str(err)};
+        body = json.dumps(error_response).encode('utf-8');
+        self.wfile.write(body);
+        self.wfile.flush();
         return
 
-    print("Validated Reservation DTO:", dto)
+    print("Validated Reservation DTO:", dto);
     print(dto);
     
     # Armazena na Queue
-    queue = Queue()
-    queue.enqueue(dto)
+    queue = Queue();
+    
+    if queue.is_conflicting(dto):
+        self.send_response(409)
+        self.send_header('Content-Type', 'application/json')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.end_headers()
+
+        response = {'error': 'Date already reserved'}
+        self.wfile.write(json.dumps(response).encode('utf-8'))
+        return
+    
+    queue.enqueue(dto);
     
     # Resposta de sucesso
-    self.send_response(201)
-    self.send_header('Content-Type', 'application/json')
-    self.send_header('Access-Control-Allow-Origin', '*')
-    self.end_headers()
+    self.send_response(201);
+    self.send_header('Content-Type', 'application/json');
+    self.send_header('Access-Control-Allow-Origin', '*');
+    self.end_headers();
 
-    response = {'message': 'Reservation Created', 'received': dto}
-    self.wfile.write(json.dumps(response).encode('utf-8'))
+    response = {'message': 'Reservation Created', 'received': dto};
+    self.wfile.write(json.dumps(response).encode('utf-8'));

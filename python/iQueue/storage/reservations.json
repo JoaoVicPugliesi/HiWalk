@@ -4,12 +4,12 @@
     "place_id": 1,
     "starting_month": "january",
     "ending_month": "january",
-    "starting_day": 28,
+    "starting_day": 22,
     "ending_day": 31,
-    "days": 3,
+    "days": 9,
     "months": [
       "january"
     ],
-    "to_be_paid": 3000
+    "to_be_paid": 9000
   }
 ]
