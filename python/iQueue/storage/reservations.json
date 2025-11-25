@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "place_id": 1,
+    "place_id": 3,
     "starting_month": "january",
     "ending_month": "january",
-    "starting_day": 22,
-    "ending_day": 31,
-    "days": 9,
+    "starting_day": 9,
+    "ending_day": 22,
+    "days": 13,
     "months": [
       "january"
     ],
-    "to_be_paid": 9000
+    "to_be_paid": 4290
   }
 ]
