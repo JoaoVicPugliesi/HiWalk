@@ -5,9 +5,8 @@ const placeHowManyDays = document.querySelector('.place-info-calendar-how-may-da
 const placeHowMuch = document.querySelector('.place-info-calendar-how-much');
 const placeBtn = document.querySelector('.place-info-confirm-calendar-btn');
 
-const placeId = localStorage.getItem('current-place-id');
 let DTO = {
-    place_id: Number(placeId),
+    place_id: 0,
     starting_month: '',
     ending_month: '',
     starting_day: 0,
@@ -16,7 +15,6 @@ let DTO = {
     months: [],
     to_be_paid: 0
 };
-
 let selectingStart = true;
 let hasSelectedStart = false;
 let selectedMonths = [];
@@ -89,7 +87,8 @@ const enqueueReservation = () => {
 
     placeBtn.addEventListener('click', async (e) => {
         e.preventDefault();
-        console.log(DTO);
+        const currentPlaceId = localStorage.getItem('current-place-id');
+        DTO.place_id = Number(currentPlaceId);
         try {
             const req = await fetch('http://127.0.0.1:8000/reservation/enqueue', {
                 method: 'POST',

@@ -27,6 +27,8 @@ const displayPlaceInfo = () => {
                 const place = await placeInfoFind(placeId);
 
                 localStorage.setItem('current-place-id', place.id.toString());
+                const testId = localStorage.getItem('current-place-id');
+                console.log(testId);
                 placeH3.textContent = place.name;
                 placeImg.src = place.image;
                 placePrice.textContent = `${place.price}` + '$';

@@ -85,6 +85,9 @@ class Queue:
         while current:
             if self._dates_overlap(current.data, dto):
                 return True
+            if current.data['place_id'] == dto['place_id']:
+                if self._dates_overlap(current.data, dto):
+                    return True
             current = current.next
 
         return False

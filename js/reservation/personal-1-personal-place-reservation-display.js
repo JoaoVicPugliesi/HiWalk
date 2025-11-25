@@ -35,12 +35,12 @@ const displayReservations = async () => {
     const places = await Promise.all(
         reservations.map(r => placeInfoFind(r.place_id))
     );
-    let content = "";
+    let content = [];
 
     reservations.forEach((reservation, index) => {
         const place = places[index];
 
-        content += `
+        content.push( `
             <div class="travel-container">
                 <img src="${place.image}" alt="" draggable="false">
 
@@ -71,10 +71,10 @@ const displayReservations = async () => {
                     </div>
                 </div>
             </div>
-        `;
+        `);
     });
 
-    travelsContainer.innerHTML = content;
+    travelsContainer.innerHTML = content.reverse();
 };
 
 export default displayReservations;

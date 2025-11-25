@@ -39,6 +39,5 @@ displayReservations();
 reservationTranslate();
 reservationsDrag();
 dequeueReservation();
-
-
-
+const placeId = localStorage.getItem('current-place-id');
+console.log(placeId);
