@@ -89,6 +89,11 @@ const enqueueReservation = () => {
 
     placeBtn.addEventListener('click', async (e) => {
         e.preventDefault();
+        
+        // CORREÇÃO: Atualiza o ID com o valor atual do localStorage antes de enviar
+        const currentPlaceId = localStorage.getItem('current-place-id');
+        DTO.place_id = Number(currentPlaceId);
+
         console.log(DTO);
         try {
             const req = await fetch('http://127.0.0.1:8000/reservation/enqueue', {

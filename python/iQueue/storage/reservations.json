@@ -1,15 +1,54 @@
 [
   {
     "id": 1,
+    "place_id": 2,
+    "starting_month": "january",
+    "ending_month": "january",
+    "starting_day": 2,
+    "ending_day": 3,
+    "days": 1,
+    "months": [
+      "january"
+    ],
+    "to_be_paid": 270
+  },
+  {
+    "id": 2,
     "place_id": 3,
     "starting_month": "january",
     "ending_month": "january",
     "starting_day": 9,
-    "ending_day": 22,
-    "days": 13,
+    "ending_day": 10,
+    "days": 1,
     "months": [
       "january"
     ],
-    "to_be_paid": 4290
+    "to_be_paid": 330
+  },
+  {
+    "id": 3,
+    "place_id": 1,
+    "starting_month": "january",
+    "ending_month": "january",
+    "starting_day": 17,
+    "ending_day": 18,
+    "days": 1,
+    "months": [
+      "january"
+    ],
+    "to_be_paid": 1000
+  },
+  {
+    "id": 4,
+    "place_id": 4,
+    "starting_month": "january",
+    "ending_month": "january",
+    "starting_day": 28,
+    "ending_day": 29,
+    "days": 1,
+    "months": [
+      "january"
+    ],
+    "to_be_paid": 240
   }
 ]
