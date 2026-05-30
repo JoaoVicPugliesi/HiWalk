@@ -131,7 +131,7 @@ a {
 }
 
 .container-icon-link i {
-    font-size: 30px;
+    font-size: 1.875rem;
     color: var(--color3);
     transition-property: color;
     transition-duration: 0.3s;
