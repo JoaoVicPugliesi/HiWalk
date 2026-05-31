@@ -45,16 +45,16 @@ const displayReservations = async () => {
                 <img src="${place.image}" alt="" draggable="false">
 
                 <div class="travel-inner-container">
-                    <a class="travel-inner-container-icon" href="">
+                    <button type="button" class="travel-inner-container-icon" aria-label="Voltar">
                         <i class="fa-solid fa-arrow-left"></i>
-                    </a>
+                    </button>
                 </div>
 
                 <div class="travel-info-container">
                     <div class="travel-info-inner-container">
-                        <a class="travel-info-inner-container-icon" href="">
+                        <button type="button" class="travel-info-inner-container-icon" aria-label="Ver mais informações">
                             <i class="fa-solid fa-arrow-down"></i>
-                        </a>
+                        </button>
 
                         <div class="travel-info-inner-details-container">
                             <h3>To: ${place.name}</h3>
@@ -74,7 +74,7 @@ const displayReservations = async () => {
         `);
     });
 
-    travelsContainer.innerHTML = content.reverse();
+    travelsContainer.innerHTML = content.reverse().join('');
 };
 
 export default displayReservations;

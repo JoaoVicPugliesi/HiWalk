@@ -383,6 +383,10 @@
     transform: scale(1);
 }
 
+.place:focus-within img {
+    transform: scale(1);
+}
+
 .place-knowledge {
     width: 100%;
     height: 100%;
@@ -407,6 +411,11 @@
     transform: translate3d(0, 0, 0);
 }
 
+.place:focus-within .place-knowledge {
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0s;
+}
+
 
 .place-knowledge h3 {
     font-size: 25px;
@@ -422,6 +431,12 @@
 .place:hover .place-knowledge h3 {
     transform: translate3d(0, 0, 0);
     background-color: transparent;
+}
+
+.place:focus-within .place-knowledge h3 {
+    transform: translate3d(0, 0, 0);
+    background-color: transparent;
+    transition-delay: 0s;
 }
 
 .place-knowledge p {
@@ -492,6 +507,12 @@
     opacity: 1;
 }
 
+.place:focus-within .place-knowledge p {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition-delay: 0s;
+}
+
 .place-knowledge-price {
     width: 100%;
     display: flex;
@@ -526,9 +547,30 @@
     transform: translate3d(0, 0, 0) rotate(360deg);
     opacity: 1;
 }
+
+.place:focus-within .place-icon-link {
+    transform: translate3d(0, 0, 0) rotate(360deg);
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.place-icon-link:focus-visible {
+    opacity: 1;
+    outline: 4px solid #fff;
+    outline-offset: 6px;
+    box-shadow: 0 0 0 8px var(--color3);
+    transition-delay: 0s;
+}
+
 .place:hover .place-knowledge-price h3 {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+}
+
+.place:focus-within .place-knowledge-price h3 {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition-delay: 0s;
 }
 
 .pagination {
@@ -538,7 +580,7 @@
     gap: 10px;
 }
 
-.pagination a {
+.pagination button {
     font-size: 1.5rem;
     border: none;
     color: var(--color3);

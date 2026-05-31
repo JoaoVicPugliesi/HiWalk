@@ -2,7 +2,6 @@ import scroll from "./personal-1-scroll.js";
 import changeContainer from "./personal-1-change-container.js";
 
 const parallax = () => {
-    console.log('parallax');
     document.addEventListener('DOMContentLoaded', () => {
         const scenaries = document.querySelectorAll('.scenary');
         const aboutH3 = document.querySelector('.about-h3');
@@ -28,7 +27,9 @@ const parallax = () => {
             clouds3.forEach(clouds3 => {
                 clouds3.style.transform = `translate(${value * 0.01 + '%'}, ${value * 0.10 + '%'})`;
             });
-            sun.style.transform = `translateY(${value * 0.5 + '%'}`;
+            if (sun) {
+                sun.style.transform = `translateY(${value * 0.5}%)`;
+            }
         });
     })
 }

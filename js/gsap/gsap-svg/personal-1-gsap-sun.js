@@ -10,7 +10,6 @@ const gsapSun = () => {
         });
     });
     */
-   console.log('sun')
 };
 
 export default gsapSun;

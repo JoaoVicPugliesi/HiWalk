@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Quicksand:wght@300..700&display=swap');
 
 
 :root {
-    --color1: #FDEED1;
-    --color2: #FE2C1F;
-    --color3: #492000;
-    --color4: #FFD5D2;
-    --color5: #1C1C2E;
+    --color1: #FEF7F7;
+    --color2: #E63939;
+    --color3: #1A1A1A;
+    --color4: #FCE8E8;
+    --color5: #1A1A1A;
     --border-radius: 20px;
     --padding: 20px;
 }
@@ -45,11 +44,21 @@ body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-family: "Outfit", "Quicksand", sans-serif;
 }
 
-a {
+a, button {
     user-select: none;
     -webkit-user-drag: none;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
 }
 
 .heroArea, .container, .container-icon-link, .hero-welcome, .place-icon-link {
@@ -216,9 +225,9 @@ a {
 }
 
 .hero-welcome h3, .places-area h3 {
-    font-family: "Quicksand", serif;
+    font-family: "Outfit", "Quicksand", sans-serif;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     font-size: 3rem;
     user-select: none;

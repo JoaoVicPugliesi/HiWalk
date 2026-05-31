@@ -1,7 +1,7 @@
 const placeCreateBtn = document.querySelector('.create-btn');
 const placeCreateContainer = document.querySelector('.place-create-container');
 const placeCreateForm = document.querySelector('.place-create-form');
-const placeCreateClose = document.querySelector('.place-create-close i');
+const placeCreateClose = document.querySelector('.place-create-close');
 const home = document.querySelector('#home');
 const html = document.querySelector('.html');
 const click = document.querySelector('.click-audio');
@@ -18,11 +18,20 @@ const displayPlaceCreate = () => {
             html.classList.remove('overflow');
             placeCreateContainer.classList.add('block');
             placeCreateForm.classList.add('block');
+            document.dispatchEvent(new CustomEvent('hiwalk:modal-opened', {
+                detail: {
+                    modal: placeCreateContainer,
+                    closeButtonSelector: '.place-create-close',
+                    triggerElement: placeCreateBtn
+                }
+            }));
         })
 
         document.addEventListener('click', (e) => {
-            if (e.target === placeCreateContainer || e.target === placeCreateClose) {
-                click.play();
+            if (e.target === placeCreateContainer || e.target.closest('.place-create-close')) {
+                if (click) {
+                    click.play().catch(() => {});
+                }
                 html.classList.add('overflow');
                 placeCreateContainer.classList.remove('block');
                 placeCreateForm.classList.remove('block');
