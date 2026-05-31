@@ -14,7 +14,7 @@ const monthsNavigate = () => {
         placeInfoCalendarMonthDays.innerHTML = '';
         data[current].days.forEach((day) => {
             placeInfoCalendarMonthDays.innerHTML += `
-                <div class="place-info-calendar-month-days-div">${day}</div>
+                <button type="button" class="place-info-calendar-month-days-div" aria-label="Dia ${day}">${day}</button>
             `
         });
     }

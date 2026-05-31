@@ -17,10 +17,9 @@ const placeCreateHttp = () => {
             })
             if (!req.ok) throw new Error('HTTP error ' + req.status);
 
-            const response = await req.json();
-            console.log('Success:', response);
+            await req.json();
         } catch (err) {
-            console.log(err);
+            console.error(err);
         }
     })
 }

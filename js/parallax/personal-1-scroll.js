@@ -3,9 +3,9 @@ const scroll = () => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
 
-            if (targetId.startsWith('#')) {
+            if (targetId && targetId.startsWith('#') && targetId.length > 1) {
                 e.preventDefault();
-                const targetSection = document.querySelector(targetId);
+                const targetSection = document.getElementById(targetId.slice(1));
 
                 if (targetSection) {
                     window.scrollTo({

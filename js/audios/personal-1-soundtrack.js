@@ -10,7 +10,7 @@ const soundtrack = () => {
             playBtn.classList.add('invisible');
             jazz.volume = 0.1;
             jazz.loop = true;
-            jazz.play();
+            jazz.play().catch(() => {});
         */
         playBtn.addEventListener('click', (e) => {
             e.preventDefault();

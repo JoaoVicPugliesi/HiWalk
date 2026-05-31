@@ -36,7 +36,6 @@ const changeContainer = () => {
         createBtn.classList.remove('change'); 
     }
 
-    console.log("changing");
 };
 
 export default changeContainer;

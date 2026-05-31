@@ -11,7 +11,6 @@ const select = () => {
         }
     });
     */
-   console.log('very soon');
 }
 
 export default select;

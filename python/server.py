@@ -49,7 +49,7 @@ class Server(BaseHTTPRequestHandler):
         self.wfile.write(b'Endpoint not Found');
         
 server = HTTPServer((HOST, PORT), Server);
-print('🚀 server is running on http://127.0.0.1:8000');
+print('Server is running on http://127.0.0.1:8000');
 
 try:
     server.serve_forever()

@@ -138,10 +138,17 @@
     right: 5%;
     top: 5%;
     cursor: pointer;
-    color: var(--color2)
+    color: var(--color2);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 50%;
 }
 
-.place-create-form button {
+.place-create-form button[type="submit"] {
     margin: 0px 5px 10px 0px;
     width: 30%;
     background-color: var(--color2);
@@ -241,7 +248,7 @@
     transform: rotate(180deg);
 }
 
-.travel-inner-container a {
+.travel-inner-container button {
     color: var(--color1);
     padding: 5px;
     cursor: pointer;
@@ -278,7 +285,7 @@
     transform: rotate(180deg);
 }
 
-.travel-info-inner-container a {
+.travel-info-inner-container button {
     cursor: pointer;
     margin: 5px 0px 0px 0px;
     width: max-content;

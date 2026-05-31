@@ -97,8 +97,7 @@ const enqueueReservation = () => {
                 },
                 body: JSON.stringify(DTO)
             });
-            const response = await req.json();
-            console.log(response);
+            await req.json();
         } catch(err) {
             console.error(err);
         }

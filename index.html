@@ -9,17 +9,19 @@
         <link rel="stylesheet" href="css/personal1-svg/personal1-animations.css">
         <link rel="stylesheet" href="css/personal1-responsive.css">
         <link rel="stylesheet" href="css/accessibility.css">
+        <link rel="icon" type="image/png" href="images/logo.png">
         <title>Hi, Walk!</title>
-        <script src="https://kit.fontawesome.com/2e9fec23b2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     </head>
     <body> 
+        <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
         <div class="load-screen">
             
         </div>
-        <div class="place-create-container">
+        <div class="place-create-container" role="dialog" aria-modal="true" aria-labelledby="place-create-title">
             <form class="place-create-form">
-                <a class="place-create-close"><i class="fa-solid fa-xmark"></i></a>
-                <h3>Create Your Destination</h3>
+                <button type="button" class="place-create-close" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+                <h3 id="place-create-title">Create Your Destination</h3>
                 <div class="place-create-inputs">
                     <div class="place-create-input-container">
                         <i class="fa-solid fa-signature"></i>
@@ -64,20 +66,21 @@
         </button>
     </div>
     <div class="container">
-        <a class="logo" href="index.html"><img src="images/logo.png" alt="" draggable="false"></a>
-        <a href="#home" class="container-icon-link"><i class="fa-solid fa-house"></i></a>
-        <a href="#about" class="container-icon-link"><i class="fa-solid fa-info"></i></a>
-        <a href="#destinations" class="container-icon-link"><i class="fa-solid fa-location-dot"></i></a>
-        <a href="#calendar" class="container-icon-link"><i class="fa-solid fa-calendar-days"></i></a>
-        <a href="#" class="container-icon-link"><i class="fa-solid fa-bars"></i></a>
+        <a class="logo" href="index.html" aria-label="Página inicial"><i class="fa-solid fa-footprint" style="font-size: 1.875rem; color: var(--color3);"></i></a>
+        <a href="#home" class="container-icon-link" aria-label="Ir para o início"><i class="fa-solid fa-house"></i></a>
+        <a href="#about" class="container-icon-link" aria-label="Ir para sobre"><i class="fa-solid fa-info"></i></a>
+        <a href="#destinations" class="container-icon-link" aria-label="Ir para destinos"><i class="fa-solid fa-location-dot"></i></a>
+        <a href="#calendar" class="container-icon-link" aria-label="Ir para calendário"><i class="fa-solid fa-calendar-days"></i></a>
+        <button type="button" class="container-icon-link" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
     <div class="manage-audios-container">
-        <a class="play-btn" href=""><i class="fa-solid fa-play"></i></a>
-        <a class="mute-btn" href=""><i class="fa-solid fa-volume-xmark"></i></a>
+        <button class="play-btn" aria-label="Tocar música"><i class="fa-solid fa-play"></i></button>
+        <button class="mute-btn" aria-label="Mutar música"><i class="fa-solid fa-volume-xmark"></i></button>
     </div>
     <div class="manage-creation-container">
-        <a class="create-btn" href=""><i class="fa-solid fa-plus"></i></a>
+        <button class="create-btn" aria-label="Criar destino"><i class="fa-solid fa-plus"></i></button>
     </div>
+    <main id="main-content">
     <section id="home" class="heroArea">
         <div class="hero-background">            
             
@@ -121,18 +124,18 @@
                     <input class="searchbar" type="text" placeholder="Search a Place">
                 </div>
                 <div class="pagination">
-                    <a class="prev"><i class="fa-solid fa-left-long"></i></a>
-                    <a class="next"><i class="fa-solid fa-right-long"></i></a>
+                    <button type="button" class="prev" aria-label="Página anterior"><i class="fa-solid fa-left-long"></i></button>
+                    <button type="button" class="next" aria-label="Próxima página"><i class="fa-solid fa-right-long"></i></button>
                 </div>
             </div>
         </div>
         <div class="places-container">
-            <div class="place-info">
+            <div class="place-info" role="dialog" aria-modal="true" aria-labelledby="place-info-title">
                 <div class="place-info-container">
-                    <a class="place-info-close"><i class="fa-solid fa-xmark"></i></a>
+                    <button type="button" class="place-info-close" aria-label="Fechar detalhes"><i class="fa-solid fa-xmark"></i></button>
                     <div>
                         <div class="place-info-name-container">
-                            <h3>N/A</h3>
+                            <h3 id="place-info-title">N/A</h3>
                         </div>
                         <div class="place-info-details-container">
                             <div class="place-info-details">
@@ -159,9 +162,9 @@
                                 <h2>How Many Days You Wanna Spend Here?</h2>
                                 <div class="place-info-calendar">
                                     <div class="place-info-calendar-month-container">
-                                        <a class="place-info-calendar-month-prev"><i class="fa-solid fa-left-long"></i></a>
+                                        <button type="button" class="place-info-calendar-month-prev" aria-label="Mês anterior"><i class="fa-solid fa-left-long"></i></button>
                                         <h1 class="place-info-calendar-month"></h1>
-                                        <a class="place-info-calendar-month-next"><i class="fa-solid fa-right-long"></i></a>
+                                        <button type="button" class="place-info-calendar-month-next" aria-label="Próximo mês"><i class="fa-solid fa-right-long"></i></button>
                                     </div>
                                     <div class="place-info-calendar-month-days">
                                     </div>
@@ -196,10 +199,12 @@
             <button class="travel-dequeue-btn">Dequeue</button>
         </div>
     </section>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="js/accessibility/font-size-manager.js"></script>
-    <script src="js/personal-1.js" type="module"></script>
+    <script src="js/accessibility/keyboard-accessibility.js?v=20260531-2"></script>
+    <script src="js/personal-1.js?v=20260531-2" type="module"></script>
 </body>
 </html>

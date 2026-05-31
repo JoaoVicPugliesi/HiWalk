@@ -6,14 +6,14 @@ const click = () => {
         if (e.target.closest('a')) {
             if (click) {
                 click.currentTime = 0;
-                click.play();
+                click.play().catch(() => {});
             } 
         }
         
         if(e.target.closest('.car')) {
             if (honk) {
                 honk.currentTime = 0;
-                honk.play();
+                honk.play().catch(() => {});
             }
         }
     });

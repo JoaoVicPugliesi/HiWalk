@@ -27,8 +27,6 @@ const displayPlaceInfo = () => {
                 const place = await placeInfoFind(placeId);
 
                 localStorage.setItem('current-place-id', place.id.toString());
-                const testId = localStorage.getItem('current-place-id');
-                console.log(testId);
                 placeH3.textContent = place.name;
                 placeImg.src = place.image;
                 placePrice.textContent = `${place.price}` + '$';
@@ -36,10 +34,19 @@ const displayPlaceInfo = () => {
                 html.classList.remove('overflow');
                 placeInfoMask.classList.add('block');
                 placeInfo.classList.add('block');
+                document.dispatchEvent(new CustomEvent('hiwalk:modal-opened', {
+                    detail: {
+                        modal: placeInfo,
+                        closeButtonSelector: '.place-info-close',
+                        triggerElement: e.target.closest('.place-icon-link')
+                    }
+                }));
             }
 
             if(e.target.closest('.place-info-close') || e.target.closest('.place-info-mask')) {
-                click.play();
+                if (click) {
+                    click.play().catch(() => {});
+                }
                 placeH3.textContent = '';
                 placePrice.textContent = '';
                 placeImg.src = '';
