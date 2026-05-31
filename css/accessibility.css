@@ -39,7 +39,7 @@
     color: var(--a11y-secondary-bg);
     border: 2px solid transparent;
     border-radius: 50%;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Outfit", sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
     cursor: pointer;
@@ -160,9 +160,32 @@
    Focus styles para navegação por teclado
    ======================================== */
 
-.font-size-control-btn:focus {
-    outline: 2px solid #000;
+.font-size-control-btn:focus-visible {
+    outline: 3px solid var(--a11y-primary-text);
     outline-offset: 2px;
+}
+
+*:focus-visible {
+    outline: 3px solid var(--a11y-primary-bg);
+    outline-offset: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--a11y-primary-bg);
+    color: var(--a11y-primary-text);
+    padding: 8px;
+    z-index: 10000;
+    transition: top 0.2s;
+    font-family: "Outfit", sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    top: 0;
 }
 
 /* Redução de movimento para usuários que preferem */
