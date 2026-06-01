@@ -198,3 +198,516 @@
         transition: none;
     }
 }
+
+.high-contrast-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    background-color: var(--a11y-primary-text);
+    color: var(--a11y-secondary-bg);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.high-contrast-toggle-btn:hover {
+    background-color: var(--a11y-hover-bg);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.high-contrast-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+.high-contrast-toggle-btn.active {
+    background-color: var(--a11y-secondary-bg);
+    color: var(--a11y-primary-text);
+}
+
+.high-contrast-toggle-btn.active:hover {
+    background-color: var(--a11y-primary-text);
+    color: var(--a11y-secondary-bg);
+}
+
+.high-contrast-toggle-btn:focus-visible {
+    outline: 3px solid var(--a11y-primary-text);
+    outline-offset: 2px;
+}
+
+.a11y-separator {
+    width: 2px;
+    height: 1.5rem;
+    background-color: var(--a11y-primary-text);
+    opacity: 0.4;
+    border-radius: 1px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .high-contrast-toggle-btn {
+        min-width: 2.2rem;
+        height: 2.2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .high-contrast-toggle-btn {
+        min-width: 2rem;
+        height: 2rem;
+    }
+
+    .a11y-separator {
+        width: 1.5rem;
+        height: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .high-contrast-toggle-btn {
+        transition: none;
+    }
+}
+
+.html.high-contrast {
+    --color1: #FFFFFF;
+    --color2: #FFFF00;
+    --color3: #000000;
+    --color4: #000000;
+    --color5: #000000;
+    --color6: #00FFFF;
+    --border-radius: 20px;
+
+    --a11y-primary-bg: #000000;
+    --a11y-primary-text: #FFFF00;
+    --a11y-secondary-bg: #000000;
+    --a11y-hover-bg: #333333;
+    --a11y-shadow: 0 2px 8px rgba(255, 255, 0, 0.3);
+}
+
+.html.high-contrast body {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.html.high-contrast .container {
+    background-color: #000000;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .container.change {
+    background-color: #1A1A00;
+    border-color: #FFFF00;
+}
+
+.html.high-contrast .container-icon-link i {
+    color: #FFFF00;
+}
+
+.html.high-contrast .container-icon-link:hover {
+    background: #FFFF00;
+}
+
+.html.high-contrast .container-icon-link:hover i {
+    color: #000000;
+}
+
+.html.high-contrast .container-icon-link.change i {
+    color: #FFFF00;
+}
+
+.html.high-contrast .container-icon-link.change:hover {
+    background-color: #FFFF00;
+}
+
+.html.high-contrast .container-icon-link.change:hover i {
+    color: #000000;
+}
+
+.html.high-contrast .logo i {
+    color: #FFFF00 !important;
+}
+
+.html.high-contrast .hero-background {
+    background-color: #000000;
+}
+
+.html.high-contrast .hero-welcome {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.html.high-contrast .hero-welcome h3 {
+    color: #FFFF00;
+}
+
+.html.high-contrast .places-area {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.html.high-contrast .places-area-about {
+    background-color: #000000;
+}
+
+.html.high-contrast .about-whys {
+    background-color: #0A0A0A;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .about-whys p,
+.html.high-contrast .about-welcome h3 {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .about-welcome {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .section-h3 {
+    color: #FFFF00;
+}
+
+.html.high-contrast .section-p {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .places-area-destinations {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .places-area-destinations h3 {
+    color: #FFFF00;
+}
+
+.html.high-contrast .places-area-destinations p {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .searchbar {
+    background-color: #000000;
+    color: #FFFF00;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .searchbar::placeholder {
+    color: #CCCC00;
+}
+
+.html.high-contrast .place {
+    background-color: #000000;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .place-knowledge {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #FFFFFF;
+}
+
+.html.high-contrast .place-knowledge h3 {
+    color: #FFFF00;
+    background-color: transparent;
+}
+
+.html.high-contrast .place-knowledge p {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .place-knowledge-price h3 {
+    color: #00FFFF;
+}
+
+.html.high-contrast .place-icon-link {
+    color: #FFFF00;
+}
+
+.html.high-contrast .place-info-mask {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.html.high-contrast .place-info {
+    background-color: #000000;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .place-info-name-container {
+    background-color: #000000;
+    border-bottom: 2px solid #FFFF00;
+}
+
+.html.high-contrast .place-info-name-container > h3,
+.html.high-contrast .place-info-container h3 {
+    color: #FFFF00;
+}
+
+.html.high-contrast .place-info-details {
+    background-color: #0A0A0A;
+    border: 1px solid #00FFFF;
+}
+
+.html.high-contrast .place-info-details div h2 {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .place-info-details div h3 {
+    color: #00FFFF;
+}
+
+.html.high-contrast .place-info-calendar-container {
+    background-color: #000000;
+}
+
+.html.high-contrast .place-info-calendar-container h2 {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .place-info-calendar {
+    background-color: #0A0A0A;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .place-info-calendar-month-container h1 {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .place-info-calendar-month-container i {
+    color: #FFFF00;
+}
+
+.html.high-contrast .place-info-calendar-month-days-div {
+    background-color: #1A1A00;
+    color: #FFFF00;
+    border: 1px solid #FFFF00;
+}
+
+.html.high-contrast .place-info-calendar-month-days-div.selected {
+    background-color: #FFFF00;
+    color: #000000;
+}
+
+.html.high-contrast .place-info-calendar-how-many-days-and-how-much h4 {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .place-info-confirm-calendar-btn {
+    background-color: #FFFF00;
+    color: #000000;
+    border: 2px solid #FFFFFF;
+}
+
+.html.high-contrast .place-info-close {
+    color: #FFFF00;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #FFFF00;
+}
+
+.html.high-contrast .calendar-area {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.html.high-contrast .section-calendar-h3 {
+    color: #FFFF00;
+}
+
+.html.high-contrast .section-calendar-p {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .travel-container {
+    background-color: #000000;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .travel-inner-container {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.html.high-contrast .travel-inner-container button {
+    color: #FFFF00;
+}
+
+.html.high-contrast .travel-info-container {
+    background-color: #000000;
+    border: 1px solid #FFFF00;
+}
+
+.html.high-contrast .travel-info-inner-details-container {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .travel-info-inner-buttons-container {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .travel-info-inner-buttons-container button {
+    background-color: #FFFF00;
+    color: #000000;
+    border: 2px solid #FFFFFF;
+}
+
+.html.high-contrast .travel-info-inner-buttons-container button:first-of-type {
+    background-color: #00FFFF;
+    color: #000000;
+}
+
+.html.high-contrast .travel-dequeue-btn {
+    background-color: #FFFF00;
+    color: #000000;
+    border: 2px solid #FFFFFF;
+}
+
+.html.high-contrast .travels-container-no-reservation {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .travels-container {
+    scrollbar-color: #FFFF00 #000000;
+}
+
+.html.high-contrast .travels-container::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+.html.high-contrast .travels-container::-webkit-scrollbar-thumb {
+    background: #FFFF00;
+}
+
+.html.high-contrast .place-create-container {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.html.high-contrast .place-create-form {
+    background-color: #000000;
+    color: #FFFF00;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .place-create-inputs input {
+    background-color: #0A0A0A;
+    color: #FFFF00;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .place-create-inputs div i {
+    color: #FFFF00;
+}
+
+.html.high-contrast .place-create-form button[type="submit"] {
+    background-color: #FFFF00;
+    color: #000000;
+    border: 2px solid #FFFFFF;
+}
+
+.html.high-contrast .place-create-close {
+    color: #FFFF00;
+    border: 1px solid #FFFF00;
+}
+
+.html.high-contrast ::placeholder {
+    color: #CCCC00;
+}
+
+.html.high-contrast .play-btn,
+.html.high-contrast .mute-btn,
+.html.high-contrast .create-btn {
+    background-color: #000000;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .play-btn i,
+.html.high-contrast .mute-btn i,
+.html.high-contrast .create-btn i {
+    color: #FFFF00;
+}
+
+.html.high-contrast .play-btn.change,
+.html.high-contrast .mute-btn.change,
+.html.high-contrast .create-btn.change {
+    background-color: #FFFF00;
+}
+
+.html.high-contrast .play-btn.change i,
+.html.high-contrast .mute-btn.change i,
+.html.high-contrast .create-btn.change i {
+    color: #000000;
+}
+
+.html.high-contrast .pagination button {
+    color: #FFFF00;
+}
+
+.html.high-contrast .next:disabled i,
+.html.high-contrast .prev:disabled i {
+    color: #555500;
+}
+
+.html.high-contrast .accessibility-controls-container {
+    background-color: #000000;
+    border: 2px solid #FFFF00;
+    box-shadow: 0 2px 8px rgba(255, 255, 0, 0.3);
+}
+
+.html.high-contrast .font-size-control-btn {
+    background-color: #000000;
+    color: #FFFF00;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .font-size-control-btn:hover:not(:disabled) {
+    background-color: #FFFF00;
+    color: #000000;
+}
+
+.html.high-contrast .font-size-control-btn[data-font-reset] {
+    background-color: #1A1A00;
+    color: #FFFF00;
+}
+
+.html.high-contrast .font-size-control-btn[data-font-reset]:hover:not(:disabled) {
+    background-color: #FFFF00;
+    color: #000000;
+}
+
+.html.high-contrast .high-contrast-toggle-btn {
+    background-color: #FFFF00;
+    color: #000000;
+    border: 2px solid #FFFFFF;
+}
+
+.html.high-contrast .high-contrast-toggle-btn:hover {
+    background-color: #000000;
+    color: #FFFF00;
+    border-color: #FFFF00;
+}
+
+.html.high-contrast .a11y-separator {
+    background-color: #FFFF00;
+    opacity: 0.6;
+}
+
+.html.high-contrast *:focus-visible {
+    outline: 3px solid #FFFF00;
+    outline-offset: 2px;
+}
+
+.html.high-contrast .skip-link {
+    background: #FFFF00;
+    color: #000000;
+}
+
+.html.high-contrast .load-screen {
+    background-color: #000000;
+}
+
+.html.high-contrast .no-results {
+    color: #FFFFFF;
+}

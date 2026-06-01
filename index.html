@@ -52,6 +52,12 @@
     </div>
     <!-- Accessibility Controls: Font Size Adjustment -->
     <div class="accessibility-controls-container">
+        <button class="high-contrast-toggle-btn" data-high-contrast-toggle
+                aria-label="Ativar modo de alto contraste"
+                aria-pressed="false">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <div class="a11y-separator" aria-hidden="true"></div>
         <button class="font-size-control-btn" data-font-decrease aria-label="Diminuir tamanho da fonte">
             <span class="sr-only">Diminuir tamanho da fonte</span>
             A−
@@ -203,6 +209,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="js/accessibility/high-contrast-manager.js"></script>
     <script src="js/accessibility/font-size-manager.js"></script>
     <script src="js/accessibility/keyboard-accessibility.js?v=20260531-2"></script>
     <script src="js/personal-1.js?v=20260531-2" type="module"></script>
