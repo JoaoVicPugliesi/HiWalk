@@ -90,12 +90,72 @@ button {
   display: none;
 }
 
+.accessibility-tutorial-ASL-translation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+  background: var(--color1);
+  display: none;
+}
+
+.accessibility-tutorial-ASL-translation.visible {
+  display: block;
+}
+
+.accessibility-tutorial-ASL-translation-display {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  overflow-y: auto;
+  padding: var(--padding);
+  user-select: none;
+}
+
+.accessibility-tutorial-ASL-translation-display::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.accessibility-tutorial-ASL-translation-component {
+  width: max-content;
+  display: flex;
+  justfify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.accessibility-word, .accessibility-ASL-letters {
+  width: 100%;
+  text-align: center;
+}
+
+.accessibility-word {
+  height: max-content;
+  background: var(--color6);
+}
+
+.accessibility-ASL-letters {
+  background: var(--color4);
+  height: max-content;
+}
+
+.accessibility-ASL-letters img {
+  width: 3rem;
+}
+
 .acessibility-tutorial-container {
   background: var(--color1);
   border-radius: var(--border-radius);
-  width: 30rem;
+  width: 40rem;
   height: 10rem;
   aspect-ratio: 16/9;
+  overflow: hidden;
   z-index: 1000;
   position: absolute;
   top: 50%;

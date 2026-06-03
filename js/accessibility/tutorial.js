@@ -1,14 +1,20 @@
 const open_tutorial_btn = document.getElementById('open-tutorial-btn');
+const base_url = 'https://res.cloudinary.com/dibxo0toz/image/upload/';
+
 
 const tutorial_mask = document.querySelector(
   ".acessibility-tutorial-container-mask",
 );
+
+const accessibility_tutorial_ASL_translation = document.querySelector('.accessibility-tutorial-ASL-translation');
+
 const tutorial_container = document.querySelector(
   ".acessibility-tutorial-container",
 );
 const accessibility_tutorial_text = document.querySelector(
   ".accessibility-tutorial-text p",
 );
+const accessibility_tutorial_translate = document.querySelector('.accessibility-tutorial-options-translate');
 const accessibility_tutorial_options_next = document.querySelector(
   ".accessibility-tutorial-options-next i",
 );
@@ -41,6 +47,15 @@ function tutorial_close(can_close) {
     tutorial_mask.classList.remove("visible");
     tutorial_container.classList.remove("visible");
   }
+}
+
+function tutorial_translation_toggle () {
+  if(accessibility_tutorial_ASL_translation.classList.contains('visible')) {
+    accessibility_tutorial_ASL_translation.classList.remove('visible');
+    return;
+  }
+
+  accessibility_tutorial_ASL_translation.classList.add('visible')
 }
 
 function tutorial_next() {
@@ -79,6 +94,13 @@ function tutorial_caller() {
   open_tutorial_btn.addEventListener('click', () => {
     tutorial_open();
   });
+
+  accessibility_tutorial_translate.addEventListener('click', () => {
+    tutorial_translation_toggle();
+  })
+  accessibility_tutorial_ASL_translation.addEventListener('click', () => {
+    tutorial_translation_toggle();
+  })
 }
 
 export default tutorial_caller;
