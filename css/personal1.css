@@ -74,6 +74,84 @@ button {
     z-index: 999;
 }
 
+.acessibility-tutorial-container-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;   
+    background: transparent;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.acessibility-tutorial-container {
+    background: var(--color1);   
+    border-radius: var(--border-radius);
+    min-width: 30rem;
+    aspect-ratio: 16/9;
+    max-height: 10rem;
+    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    will-change: opacity, width, height;
+    transition: opacity 0.3s ease, width 0.8s ease, height 0.8s ease;
+    display: none;
+}
+
+.acessibility-tutorial-container-mask.visible,
+.acessibility-tutorial-container.visible {
+    display: flex;
+}
+
+.accessibility-tutorial-mascot,
+.accessibility-tutorial-text,
+.accessibility-tutorial-options,
+.accessibility-tutorial-options div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accessibility-tutorial-mascot {
+    width: 30%;
+}
+
+.accessibility-tutorial-mascot img {
+    width: 100%;
+    height: 100%;
+}
+
+.accessibility-tutorial-text {
+    width: 60%;
+    justify-content: start;
+    align-items: center;
+}
+
+.accessibility-tutorial-options {
+    width: 10%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.accessibility-tutorial-options div {
+    height: 25%;
+}
+
+.accessibility-tutorial-options div i {
+  cursor: pointer;
+}
+
+.accessibility-tutorial-options div h3 {
+    user-select: none;
+}
+
 .container {
     background-color: var(--color1);
     border-radius: var(--border-radius);
