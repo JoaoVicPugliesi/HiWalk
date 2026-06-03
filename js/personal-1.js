@@ -18,6 +18,7 @@ import displayReservations from './reservation/personal-1-personal-place-reserva
 import reservationsDrag from './reservation/personal-1-reservations-drag.js';
 import reservationTranslate from './reservation/personal-1-reservation-translate.js';
 import dequeueReservation from './reservation/personal-1-personal-place-reservation-dequeue.js';
+import tutorial_caller from './accessibility/tutorial.js';
 
 includeIllustrations();
 renderingPlaces();
@@ -39,3 +40,4 @@ displayReservations();
 reservationTranslate();
 reservationsDrag();
 dequeueReservation();
+tutorial_caller();
