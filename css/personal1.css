@@ -110,9 +110,7 @@ button {
   justify-content: start;
   align-items: start;
   flex-wrap: wrap;
-  gap: 0.2rem;
   overflow-y: auto;
-  padding: var(--padding);
   user-select: none;
 }
 
@@ -122,12 +120,11 @@ button {
 }
 
 .accessibility-tutorial-ASL-translation-component {
-  width: max-content;
+  width: 100%;
   display: flex;
   justfify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
 }
 
 .accessibility-word, .accessibility-ASL-letters {
@@ -146,14 +143,14 @@ button {
 }
 
 .accessibility-ASL-letters img {
-  width: 3rem;
+  width: 2rem;
 }
 
 .acessibility-tutorial-container {
   background: var(--color1);
   border-radius: var(--border-radius);
   width: 40rem;
-  height: 10rem;
+  height: 15rem;
   aspect-ratio: 16/9;
   overflow: hidden;
   z-index: 1000;

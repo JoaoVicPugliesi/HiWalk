@@ -191,10 +191,10 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 650px) {
   .acessibility-tutorial-container {
     flex-direction: column;
-    width: 10rem;
+    width: 15rem;
     min-height: 25rem;
     padding: var(--padding);
   }
