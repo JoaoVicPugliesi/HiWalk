@@ -9,6 +9,8 @@
     --a11y-hover-bg: #FFD5D2;
     --a11y-border-radius: 8px;
     --a11y-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --a11y-touch-size: clamp(2rem, 5.5vw, 2.75rem);
+    --a11y-translateY: 0;
 }
 
 /* Container dos controles de acessibilidade */
@@ -16,6 +18,7 @@
     position: fixed;
     top: 1rem;
     right: 1rem;
+    transform: translateY(var(--a11y-translateY));
     z-index: 994;
     display: flex;
     gap: 0.5rem;
@@ -24,7 +27,8 @@
     border-radius: var(--a11y-border-radius);
     box-shadow: var(--a11y-shadow);
     align-items: center;
-    animation: slideInRight 0.3s ease-out;
+    max-width: calc(100% - 2rem);
+    animation: slideInRight 0.35s ease-out;
 }
 
 /* Botões de controle de fonte */
@@ -32,8 +36,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 2.5rem;
-    height: 2.5rem;
+    min-width: var(--a11y-touch-size);
+    height: var(--a11y-touch-size);
     padding: 0;
     background-color: var(--a11y-primary-text);
     color: var(--a11y-secondary-bg);
@@ -69,8 +73,8 @@
     background-color: var(--a11y-secondary-bg);
     color: var(--a11y-primary-text);
     min-width: auto;
-    width: 2rem;
-    height: 2rem;
+    width: calc(var(--a11y-touch-size) * 0.9);
+    height: calc(var(--a11y-touch-size) * 0.9);
     font-size: 0.75rem;
 }
 
@@ -106,11 +110,11 @@
 @keyframes slideInRight {
     from {
         opacity: 0;
-        transform: translateX(20px);
+        transform: translateX(20px) translateY(var(--a11y-translateY));
     }
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0) translateY(var(--a11y-translateY));
     }
 }
 
@@ -120,22 +124,36 @@
 
 @media (max-width: 768px) {
     .accessibility-controls-container {
-        top: 0.5rem;
-        right: 0.5rem;
+        top: 50%;
+        right: 0.75rem;
         padding: 0.5rem;
         gap: 0.25rem;
+        --a11y-translateY: -50%;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 12px;
+        padding-left: 0.45rem;
+        padding-right: 0.45rem;
     }
 
     .font-size-control-btn {
-        min-width: 2.2rem;
-        height: 2.2rem;
+        min-width: max(44px, 2.2rem);
+        height: max(44px, 2.2rem);
         font-size: 0.85rem;
     }
 
     .font-size-control-btn[data-font-reset] {
-        width: 1.8rem;
-        height: 1.8rem;
+        width: max(40px, 1.8rem);
+        height: max(40px, 1.8rem);
         font-size: 0.65rem;
+    }
+
+    .a11y-separator {
+        display: none;
+    }
+
+    .font-size-indicator {
+        display: none;
     }
 
     .font-size-indicator {
@@ -147,12 +165,40 @@
     .accessibility-controls-container {
         flex-direction: column;
         width: auto;
-        padding: 0.5rem;
+        padding: 0.35rem;
+        gap: 0.35rem;
+        top: 50%;
+        right: 0.6rem;
+        --a11y-translateY: -50%;
+        align-items: center;
     }
 
     .font-size-control-btn {
-        min-width: 2rem;
-        height: 2rem;
+        min-width: max(44px, 2rem);
+        height: max(44px, 2rem);
+    }
+}
+
+/* Very small screens / narrow devices: collapse to a single-row overflowable container */
+@media (max-width: 360px) {
+    .accessibility-controls-container {
+        right: 0.5rem;
+        left: 0.5rem;
+        bottom: 0.5rem;
+        top: auto;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.4rem;
+        border-radius: 999px;
+    }
+
+    .accessibility-controls-container .font-size-indicator {
+        display: none;
+    }
+
+    .accessibility-controls-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
