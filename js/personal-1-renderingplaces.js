@@ -66,7 +66,7 @@ const renderingPlaces = async () => {
                         <p>${place.description}</p>
                         <div class="place-knowledge-price">
                             <h3>${place.price}$</h3>
-                            <button type="button" class="place-icon-link" data-place-id="${place.id}" aria-label="Ver detalhes de ${place.name}"><i class="fa-solid fa-arrow-right"></i></button>
+                            <a type="button" class="place-icon-link" data-place-id="${place.id}" aria-label="Ver detalhes de ${place.name}"><i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

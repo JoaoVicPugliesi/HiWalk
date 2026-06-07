@@ -429,7 +429,7 @@
     color: #FFFF00;
 }
 
-.html.high-contrast .place-info-mask {
+.html.high-contrast {
     background-color: rgba(0, 0, 0, 0.8);
 }
 

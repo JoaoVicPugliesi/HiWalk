@@ -180,7 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
             event.target.closest('.place-create-close')
             || event.target.closest('.place-info-close')
             || event.target.classList.contains('place-create-container')
-            || event.target.classList.contains('place-info-mask')
         ) {
             restoreFocus();
         }
