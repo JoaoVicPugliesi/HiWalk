@@ -52,18 +52,20 @@
     height: 80vh;
     background-color: #0077B6;
     position: relative;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
 
 .about-whys div {
-    width: 72%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
 
 .about-whys p {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .about-welcome {

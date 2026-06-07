@@ -1,9 +1,6 @@
 import create_word_component from "./create-word-component.js";
 
 const open_tutorial_btn = document.getElementById("open-tutorial-btn");
-const tutorial_mask = document.querySelector(
-  ".acessibility-tutorial-container-mask",
-);
 const accessibility_tutorial_ASL_translation = document.querySelector(
   ".accessibility-tutorial-ASL-translation",
 );
@@ -70,13 +67,11 @@ function tutorial_translation_toggle() {
 }
 
 function tutorial_open() {
-  tutorial_mask.classList.add("visible");
   tutorial_container.classList.add("visible");
 }
 
 function tutorial_close(can_close) {
   if (can_close) {
-    tutorial_mask.classList.remove("visible");
     tutorial_container.classList.remove("visible");
   }
 }
