@@ -224,4 +224,8 @@
   .accessibility-tutorial-options div {
     width: 25%;
   }
+
+  .about-whys p {
+    font-size: 1.5rem;
+  }
 }
