@@ -19,25 +19,35 @@ import reservationsDrag from './reservation/personal-1-reservations-drag.js';
 import reservationTranslate from './reservation/personal-1-reservation-translate.js';
 import dequeueReservation from './reservation/personal-1-personal-place-reservation-dequeue.js';
 import tutorial_caller from './accessibility/tutorial.js';
+import initMenus from './menus.js';
 
-includeIllustrations();
-renderingPlaces();
-gsapCar();
-gsapSun();
-parallax();
-load();
-soundtrack();
-placeCreateHttp();
-displayPlaceInfo();
-displayPlaceCreate();
-select();
-click();
-callTypewriter();
-gsapScroll();
-gsapLinks();
-monthsNavigate();
-displayReservations();
-reservationTranslate();
-reservationsDrag();
-dequeueReservation();
-tutorial_caller();
+const initializeApp = () => {
+    includeIllustrations();
+    renderingPlaces();
+    gsapCar();
+    gsapSun();
+    parallax();
+    load();
+    soundtrack();
+    placeCreateHttp();
+    displayPlaceInfo();
+    displayPlaceCreate();
+    select();
+    click();
+    callTypewriter();
+    gsapScroll();
+    gsapLinks();
+    monthsNavigate();
+    displayReservations();
+    reservationTranslate();
+    reservationsDrag();
+    dequeueReservation();
+    tutorial_caller();
+    initMenus();
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
+    initializeApp();
+}

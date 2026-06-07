@@ -241,9 +241,26 @@ button {
   gap: 20px;
   transform: translate(-10%, -50%);
   z-index: 995;
-  transition-property: width, background-color;
+  transition-property: width, background-color, border-radius, top, left, transform;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#hamburger-menu-btn {
+  display: none;
+  font-size: 1.875rem;
+  color: var(--color3);
+  transition: color 0.3s;
+}
+
+#hamburger-menu-btn:hover {
+  color: var(--color2);
 }
 
 .container.change {
@@ -301,7 +318,7 @@ button {
   transition-timing-function: ease-in-out;
 }
 
-.container-icon-link:hover {
+.container-icon-link:hover:not(.radial-menu-toggle) {
   background: var(--color2);
 }
 .container-icon-link:hover i {
