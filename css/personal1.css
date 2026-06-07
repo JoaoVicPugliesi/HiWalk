@@ -70,6 +70,7 @@ button {
   display: flex;
   align-items: center;
 }
+
 .heroArea {
   width: 100vw !important;
   height: 100%;

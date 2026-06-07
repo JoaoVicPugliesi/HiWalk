@@ -163,13 +163,7 @@
     .radial-menu-container.active .radial-item:nth-child(4) { transform: translate(55px, 30px) scale(1); }
 }
 
-@media (max-width: 550px) {
-    /* No mobile, abre para esquerda/baixo a partir do topo-direito */
-    .radial-menu-container.active .radial-item:nth-child(1) { transform: translate(-55px, 10px) scale(1); }
-    .radial-menu-container.active .radial-item:nth-child(2) { transform: translate(-45px, 45px) scale(1); }
-    .radial-menu-container.active .radial-item:nth-child(3) { transform: translate(-15px, 65px) scale(1); }
-    .radial-menu-container.active .radial-item:nth-child(4) { transform: translate(25px, 65px) scale(1); }
-}
+
 
 @media (max-width: 768px) {
     .font-size-control-btn {
@@ -323,17 +317,14 @@
 }
 
 .html.high-contrast .container {
-    background-color: #000000;
-    border: 2px solid #FFFF00;
+   width: max-content;
+   color: var(--color1);
 }
+
 
 .html.high-contrast .container.change {
     background-color: #1A1A00;
     border-color: #FFFF00;
-}
-
-.html.high-contrast .container-icon-link i {
-    color: #FFFF00;
 }
 
 .html.high-contrast .container-icon-link:hover:not(.radial-menu-toggle) {
@@ -367,6 +358,14 @@
 .html.high-contrast .hero-welcome {
     background-color: #000000;
     color: #FFFFFF;
+}
+
+@media (max-width: 550px) {
+    /* No mobile, abre para esquerda/baixo a partir do topo-direito */
+    .radial-menu-container.active .radial-item:nth-child(1) { transform: translate(-55px, 10px) scale(1); }
+    .radial-menu-container.active .radial-item:nth-child(2) { transform: translate(-45px, 45px) scale(1); }
+    .radial-menu-container.active .radial-item:nth-child(3) { transform: translate(-15px, 65px) scale(1); }
+    .radial-menu-container.active .radial-item:nth-child(4) { transform: translate(25px, 65px) scale(1); }
 }
 
 .html.high-contrast .hero-welcome h3 {
@@ -741,4 +740,30 @@
 
 .html.high-contrast .moon {
     opacity: 1 !important;
+}
+
+.html.high-contrast .acessibility-tutorial-container {
+    background-color: #000000;
+    border: 2px solid #FFFF00;
+}
+
+.html.high-contrast .accessibility-tutorial-text p {
+    color: #FFFFFF;
+}
+
+.html.high-contrast .accessibility-tutorial-options div i,
+.accessibility-ASL-letters {
+    color: #FFFF00;
+}
+
+.html.high-contrast .accessibility-word {
+    background: var(--color3);
+}
+
+.html.high-contrast .accessibility-ASL-letters {
+    background: var(--color1);
+}
+
+.html.high-contrast .accessibility-tutorial-options-counter h3 {
+    color: #FFFFFF;
 }
