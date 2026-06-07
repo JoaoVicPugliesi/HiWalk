@@ -79,25 +79,71 @@ button {
   z-index: 999;
 }
 
-.acessibility-tutorial-container-mask {
+.accessibility-tutorial-ASL-translation {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 999;
-  background: transparent;
-  top: 0;
-  left: 0;
+  z-index: 1001;
+  background: var(--color1);
   display: none;
+}
+
+.accessibility-tutorial-ASL-translation.visible {
+  display: block;
+}
+
+.accessibility-tutorial-ASL-translation-display {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  user-select: none;
+}
+
+.accessibility-tutorial-ASL-translation-display::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.accessibility-tutorial-ASL-translation-component {
+  width: 100%;
+  display: flex;
+  justfify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.accessibility-word, .accessibility-ASL-letters {
+  width: 100%;
+  text-align: center;
+}
+
+.accessibility-word {
+  height: max-content;
+  background: var(--color6);
+}
+
+.accessibility-ASL-letters {
+  background: var(--color4);
+  height: max-content;
+}
+
+.accessibility-ASL-letters img {
+  width: 2rem;
 }
 
 .acessibility-tutorial-container {
   background: var(--color1);
   border-radius: var(--border-radius);
-  width: 30rem;
-  height: 10rem;
+  width: 40rem;
+  height: 15rem;
   aspect-ratio: 16/9;
+  overflow: hidden;
   z-index: 1000;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   display: flex;

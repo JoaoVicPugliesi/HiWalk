@@ -1,72 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="html" lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/personal1.css">
-        <link rel="stylesheet" href="css/personal2.css">
-        <link rel="stylesheet" href="css/personal3.css">
-        <link rel="stylesheet" href="css/personal1-svg/personal1-animations.css">
-        <link rel="stylesheet" href="css/personal1-responsive.css">
-        <link rel="stylesheet" href="css/accessibility.css">
-        <link rel="icon" type="image/png" href="images/logo.png">
-        <title>Hi, Walk!</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    </head>
-    <body> 
-        <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
-        <div class="load-screen">
-            
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/personal1.css" />
+    <link rel="stylesheet" href="css/personal2.css" />
+    <link rel="stylesheet" href="css/personal3.css" />
+    <link rel="stylesheet" href="css/personal1-svg/personal1-animations.css" />
+    <link rel="stylesheet" href="css/personal1-responsive.css" />
+    <link rel="stylesheet" href="css/accessibility.css" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <title>Hi, Walk!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+    <div class="load-screen"></div>
+    <div class="acessibility-tutorial-container">
+        <div class="accessibility-tutorial-ASL-translation">
+          <div class="accessibility-tutorial-ASL-translation-display">
+           
+          </div>
         </div>
-        <div class="acessibility-tutorial-container-mask">
-            
+      <div class="accessibility-tutorial-mascot">
+        <img src="images/accessibility/fox.svg" alt="" draggable="false" />
+      </div>
+      <div class="accessibility-tutorial-text">
+        <p>
+          Hi, my name is Fox, i am your HiWalk Guider. Remember! You can use the
+          buttons on the right to navigate through sections or translate the
+          text into gestures.
+        </p>
+      </div>
+      <div class="accessibility-tutorial-options">
+        <div class="accessibility-tutorial-options-translate">
+          <i class="fa-solid fa-hands"></i>
         </div>
-        <div class="accessibility-tutorial-translation"></div>
-        <div class="acessibility-tutorial-container">
-            <div class="accessibility-tutorial-mascot">
-                <img src="images/accessibility/fox.svg" alt="" draggable="false">
-            </div>
-            <div class="accessibility-tutorial-text">
-                <p>Hi, my name is Fox, i am your HiWalk Guider. Remember! You can use the buttons on the right to navigate through sections or translate the text into gestures.</p>
-            </div>
-            <div class="accessibility-tutorial-options">
-                <div class="accessibility-tutorial-options-translate"><i class="fa-solid fa-hands"></i></div>
-                <div class="accessibility-tutorial-options-next"><i class="fa-solid fa-door-closed"></i></div>
-                <div class="accessibility-tutorial-options-previous"><i class="fa-solid fa-door-open"></i></div>
-                <div class="accessibility-tutorial-options-counter"><h3>1/5</h3></div>
-            </div>
+        <div class="accessibility-tutorial-options-next">
+          <i class="fa-solid fa-door-closed"></i>
         </div>
-        <div class="place-create-container" role="dialog" aria-modal="true" aria-labelledby="place-create-title">
-            <form class="place-create-form">
-                <button type="button" class="place-create-close" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
-                <h3 id="place-create-title">Create Your Destination</h3>
-                <div class="place-create-inputs">
-                    <div class="place-create-input-container">
-                        <i class="fa-solid fa-signature"></i>
-                        <input type="text" name="name" placeholder="Name" required autocomplete="off">
-                    </div>
-                    <div class="place-create-input-container">
-                        <i class="fa-solid fa-image"></i>
-                        <input type="url" name="image" placeholder="Image URL" required autocomplete="off">
-                    </div>
-                    <div class="place-create-input-container">
-                        <i class="fa-solid fa-file-lines"></i>
-                        <input type="text" name="description" placeholder="Description" required autocomplete="off" maxlength="100">
-                    </div>
-                    <div class="place-create-input-container">
-                        <i class="fa-solid fa-tag"></i>
-                        <input type="number" name="price" placeholder="Price" required autocomplete="off">
-                    </div>
-                </div>
-                <button type="submit">Create</button>
-            </form>
+        <div class="accessibility-tutorial-options-previous">
+          <i class="fa-solid fa-door-open"></i>
         </div>
+        <div class="accessibility-tutorial-options-counter"><h3>1/5</h3></div>
+      </div>
+    </div>
+    <div
+      class="place-create-container"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="place-create-title"
+    >
+      <form class="place-create-form">
+        <button type="button" class="place-create-close" aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h3 id="place-create-title">Create Your Destination</h3>
+        <div class="place-create-inputs">
+          <div class="place-create-input-container">
+            <i class="fa-solid fa-signature"></i>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="place-create-input-container">
+            <i class="fa-solid fa-image"></i>
+            <input
+              type="url"
+              name="image"
+              placeholder="Image URL"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="place-create-input-container">
+            <i class="fa-solid fa-file-lines"></i>
+            <input
+              type="text"
+              name="description"
+              placeholder="Description"
+              required
+              autocomplete="off"
+              maxlength="100"
+            />
+          </div>
+          <div class="place-create-input-container">
+            <i class="fa-solid fa-tag"></i>
+            <input
+              type="number"
+              name="price"
+              placeholder="Price"
+              required
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <button type="submit">Create</button>
+      </form>
+    </div>
     <div class="sound-effects">
-        <audio class="select-audio" src="js/audios/select.mp3"></audio>
-        <audio class="jazz-audio" src="js/audios/jazz.mp3"></audio>
-        <audio class="honk-audio" src="js/audios/honk.mp3"></audio>
-        <audio class="click-audio" src="js/audios/click.mp3"></audio>
-        <audio class="pick-audio" src="js/audios/pick.mp3"></audio>
+      <audio class="select-audio" src="js/audios/select.mp3"></audio>
+      <audio class="jazz-audio" src="js/audios/jazz.mp3"></audio>
+      <audio class="honk-audio" src="js/audios/honk.mp3"></audio>
+      <audio class="click-audio" src="js/audios/click.mp3"></audio>
+      <audio class="pick-audio" src="js/audios/pick.mp3"></audio>
     </div>
     <div class="container" id="main-nav-menu">
         <button id="hamburger-menu-btn" aria-label="Menu" aria-expanded="false">
@@ -104,134 +148,175 @@
         </div>
     </div>
     <div class="manage-audios-container">
-        <button class="play-btn" aria-label="Tocar música"><i class="fa-solid fa-play"></i></button>
-        <button class="mute-btn" aria-label="Mutar música"><i class="fa-solid fa-volume-xmark"></i></button>
+      <button class="play-btn" aria-label="Tocar música">
+        <i class="fa-solid fa-play"></i>
+      </button>
+      <button class="mute-btn" aria-label="Mutar música">
+        <i class="fa-solid fa-volume-xmark"></i>
+      </button>
     </div>
     <div class="manage-creation-container">
-        <button class="create-btn" aria-label="Criar destino"><i class="fa-solid fa-plus"></i></button>
+      <button class="create-btn" aria-label="Criar destino">
+        <i class="fa-solid fa-plus"></i>
+      </button>
     </div>
     <main id="main-content">
-    <section id="home" class="heroArea">
-        <div class="hero-background">            
-            
-        </div>
+      <section id="home" class="heroArea">
+        <div class="hero-background"></div>
         <div class="hero-welcome">
-            <div>
-                <h3 id="home-typewriter"></h3>
-                <h3 id="home-typecursor"> |</h3>
-            </div>
+          <div>
+            <h3 id="home-typewriter"></h3>
+            <h3 id="home-typecursor">|</h3>
+          </div>
         </div>
-    </section>
-    <section id="about" class="places-area">
+      </section>
+      <section id="about" class="places-area">
         <div class="places-area-about">
-            <div class="about-whys">
-                <div>
-                    <p class="section-p">HiWalk is a dynamic travel platform designed to redefine the way people explore the world. Whether you're a solo adventurer, a group traveler, or a digital nomad, HiWalk connects you with unique destinations, curated experiences, and effortless planning tools.</p>
-                    
-                    <p class="section-p">HiWalk isn’t just about reaching a destination—it’s about embracing the journey. From walking tours to immersive experiences, we make travel intuitive, inspiring, and stress-free. Let’s take the next step together.</p>
-                </div>
+          <div class="about-whys">
+            <div>
+              <p class="section-p">
+                HiWalk is a dynamic travel platform designed to redefine the way
+                people explore the world. Whether you're a solo adventurer, a
+                group traveler, or a digital nomad, HiWalk connects you with
+                unique destinations, curated experiences, and effortless
+                planning tools.
+              </p>
             </div>
-            <div class="about-welcome">
-                <div>
-                    <h3 class="section-h3">HiWalk</h3>
-                </div>
-                <div>
-                    <h3 id="about-typewriter"></h3>
-                    <h3 id="about-typecursor"> |</h3>
-                </div>
+          </div>
+          <div class="about-welcome">
+            <div>
+              <h3 class="section-h3">HiWalk</h3>
             </div>
+            <div>
+              <h3 id="about-typewriter"></h3>
+              <h3 id="about-typecursor">|</h3>
+            </div>
+          </div>
         </div>
-    </section>
-    <section id="destinations" class="places-area">
-        <div class="place-info-mask">
-            
-        </div>
+      </section>
+      <section id="destinations" class="places-area">
         <div class="places-area-destinations">
-            <h3 class="section-h3">Destinations</h3>
-            <p class="section-p">Here you can find new adventures across the entire world. Compare prices. Look inside every aspect of your new journey and be free to share with us how your freedom taste looks like.</p>
-            <div class="places-searchbar-pagination">
-                <div class="searchbar-container">
-                    <input class="searchbar" type="text" placeholder="Search a Place">
-                </div>
-                <div class="pagination">
-                    <button type="button" class="prev" aria-label="Página anterior"><i class="fa-solid fa-left-long"></i></button>
-                    <button type="button" class="next" aria-label="Próxima página"><i class="fa-solid fa-right-long"></i></button>
-                </div>
+          <h3 class="section-h3">Destinations</h3>
+          <p class="section-p">
+            Here you can find new adventures across the entire world. Compare
+            prices. Look inside every aspect of your new journey and be free to
+            share with us how your freedom taste looks like.
+          </p>
+          <div class="places-searchbar-pagination">
+            <div class="searchbar-container">
+              <input
+                class="searchbar"
+                type="text"
+                placeholder="Search a Place"
+              />
             </div>
+            <div class="pagination">
+              <button type="button" class="prev" aria-label="Página anterior">
+                <i class="fa-solid fa-left-long"></i>
+              </button>
+              <button type="button" class="next" aria-label="Próxima página">
+                <i class="fa-solid fa-right-long"></i>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="places-container">
-            <div class="place-info" role="dialog" aria-modal="true" aria-labelledby="place-info-title">
-                <div class="place-info-container">
-                    <button type="button" class="place-info-close" aria-label="Fechar detalhes"><i class="fa-solid fa-xmark"></i></button>
-                    <div>
-                        <div class="place-info-name-container">
-                            <h3 id="place-info-title">N/A</h3>
-                        </div>
-                        <div class="place-info-details-container">
-                            <div class="place-info-details">
-                                <div class="place-info-daily-price-details">
-                                    <h2>Daily Price: </h2>
-                                    <h3 class="place-info-price"></h3>
-                                </div>
-                                <div class="place-info-attribute-details">
-                                    <div>
-                                        <h2>Attributes:</h2>
-                                    </div>
-                                    <div>
-                                        <h3>#Cozy</h3>
-                                        <h3>#Expensive</h3>
-                                        <h3>#Unique</h3>
-                                    </div>
-                                </div>
-                                <div class="place-info-rating-details">
-                                    <h2>Rating: (0-5)</h2>
-                                    <h3>4.0</h3>
-                                </div>
-                            </div>
-                            <div class="place-info-calendar-container">
-                                <h2>How Many Days You Wanna Spend Here?</h2>
-                                <div class="place-info-calendar">
-                                    <div class="place-info-calendar-month-container">
-                                        <button type="button" class="place-info-calendar-month-prev" aria-label="Mês anterior"><i class="fa-solid fa-left-long"></i></button>
-                                        <h1 class="place-info-calendar-month"></h1>
-                                        <button type="button" class="place-info-calendar-month-next" aria-label="Próximo mês"><i class="fa-solid fa-right-long"></i></button>
-                                    </div>
-                                    <div class="place-info-calendar-month-days">
-                                    </div>
-                                </div>
-                                <div class="place-info-calendar-how-many-days-and-how-much">
-                                    <h4 class="place-info-calendar-how-may-days">Days: 0</h4>
-                                    <h4 class="place-info-calendar-how-much">To be paid: 0$</h4>
-                                </div>
-                                <div class="place-info-calendar-confirm-btn-container">
-                                    <button class="place-info-confirm-calendar-btn">Confirm</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  
-                    <img src="" alt="" draggable="false">  
+          <div
+            class="place-info"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="place-info-title"
+          >
+            <div class="place-info-container">
+              <button
+                type="button"
+                class="place-info-close"
+                aria-label="Fechar detalhes"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+              <div>
+                <div class="place-info-name-container">
+                  <h3 id="place-info-title">N/A</h3>
                 </div>
+                <div class="place-info-details-container">
+                  <div class="place-info-details">
+                    <div class="place-info-daily-price-details">
+                      <h2>Daily Price:</h2>
+                      <h3 class="place-info-price"></h3>
+                    </div>
+                    <div class="place-info-attribute-details">
+                      <div>
+                        <h2>Attributes:</h2>
+                      </div>
+                      <div>
+                        <h3>#Cozy</h3>
+                        <h3>#Expensive</h3>
+                        <h3>#Unique</h3>
+                      </div>
+                    </div>
+                    <div class="place-info-rating-details">
+                      <h2>Rating: (0-5)</h2>
+                      <h3>4.0</h3>
+                    </div>
+                  </div>
+                  <div class="place-info-calendar-container">
+                    <h2>How Many Days You Wanna Spend Here?</h2>
+                    <div class="place-info-calendar">
+                      <div class="place-info-calendar-month-container">
+                        <button
+                          type="button"
+                          class="place-info-calendar-month-prev"
+                          aria-label="Mês anterior"
+                        >
+                          <i class="fa-solid fa-left-long"></i>
+                        </button>
+                        <h1 class="place-info-calendar-month"></h1>
+                        <button
+                          type="button"
+                          class="place-info-calendar-month-next"
+                          aria-label="Próximo mês"
+                        >
+                          <i class="fa-solid fa-right-long"></i>
+                        </button>
+                      </div>
+                      <div class="place-info-calendar-month-days"></div>
+                    </div>
+                    <div class="place-info-calendar-how-many-days-and-how-much">
+                      <h4 class="place-info-calendar-how-may-days">Days: 0</h4>
+                      <h4 class="place-info-calendar-how-much">
+                        To be paid: 0$
+                      </h4>
+                    </div>
+                    <div class="place-info-calendar-confirm-btn-container">
+                      <button class="place-info-confirm-calendar-btn">
+                        Confirm
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <img src="" alt="" draggable="false" />
             </div>
-            <div class="places">
-                
-            </div>
+          </div>
+          <div class="places"></div>
         </div>
-    </section>
-    <section id="calendar" class="calendar-area">
+      </section>
+      <section id="calendar" class="calendar-area">
         <div class="calendar-area-travels">
-            <h3 class="section-calendar-h3">Scheduled Travels</h3>
-            <p class="section-calendar-p">Here you can find your scheduled travels.</p>
+          <h3 class="section-calendar-h3">Scheduled Travels</h3>
+          <p class="section-calendar-p">
+            Here you can find your scheduled travels.
+          </p>
         </div>
-        <div class="travels-container">
-            
-        </div>
+        <div class="travels-container"></div>
         <div class="travel-dequeue-btn-container">
-            <button class="travel-dequeue-btn">Dequeue</button>
+          <button class="travel-dequeue-btn">Dequeue</button>
         </div>
-    </section>
+      </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="js/accessibility/high-contrast-manager.js"></script>
     <script src="js/accessibility/font-size-manager.js"></script>

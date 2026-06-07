@@ -6,13 +6,9 @@ const load = () => {
         loadScreen.classList.add('invisible');
         html.classList.add('overflow');
         if(!tutorial_complete) {
-            const tutorial_mask = document.querySelector(
-                ".acessibility-tutorial-container-mask",
-            );
             const tutorial_container = document.querySelector(
                 ".acessibility-tutorial-container",
             );
-            tutorial_mask.classList.add('visible');
             tutorial_container.classList.add('visible');
         }
     });
