@@ -197,7 +197,7 @@
 
 @media (max-width: 550px) {
   .container {
-    width: 100vw;
+    width: max-content;
     height: 60px;
     border-radius: 0;
     justify-content: space-between;
