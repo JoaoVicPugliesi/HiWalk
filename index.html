@@ -68,34 +68,40 @@
         <audio class="click-audio" src="js/audios/click.mp3"></audio>
         <audio class="pick-audio" src="js/audios/pick.mp3"></audio>
     </div>
-    <!-- Accessibility Controls: Font Size Adjustment -->
-    <div class="accessibility-controls-container">
-        <button class="high-contrast-toggle-btn" data-high-contrast-toggle
-                aria-label="Ativar modo de alto contraste"
-                aria-pressed="false">
-            <i class="fa-solid fa-circle-half-stroke"></i>
+    <div class="container" id="main-nav-menu">
+        <button id="hamburger-menu-btn" aria-label="Menu" aria-expanded="false">
+            <i class="fa-solid fa-bars" style="color: yellow;"></i>
         </button>
-        <div class="a11y-separator" aria-hidden="true"></div>
-        <button class="font-size-control-btn" data-font-decrease aria-label="Diminuir tamanho da fonte">
-            <span class="sr-only">Diminuir tamanho da fonte</span>
-            A−
-        </button>
-        <button class="font-size-control-btn" data-font-reset aria-label="Resetar tamanho da fonte para o padrão">
-            <span class="sr-only">Resetar tamanho</span>
-            A
-        </button>
-        <button class="font-size-control-btn" data-font-increase aria-label="Aumentar tamanho da fonte">
-            <span class="sr-only">Aumentar tamanho da fonte</span>
-            A+
-        </button>
-    </div>
-    <div class="container">
         <a class="logo" href="index.html" aria-label="Página inicial"><i class="fa-solid fa-footprint" style="font-size: 1.875rem; color: var(--color3);"></i></a>
-        <a href="#home" class="container-icon-link" aria-label="Ir para o início"><i class="fa-solid fa-house"></i></a>
-        <a href="#about" class="container-icon-link" aria-label="Ir para sobre"><i class="fa-solid fa-info"></i></a>
-        <a href="#destinations" class="container-icon-link" aria-label="Ir para destinos"><i class="fa-solid fa-location-dot"></i></a>
-        <a href="#calendar" class="container-icon-link" aria-label="Ir para calendário"><i class="fa-solid fa-calendar-days"></i></a>
-        <a type="button" id="open-tutorial-btn" href="#" class="container-icon-link" aria-label="Menu"><i class="fa-brands fa-readme"></i></a>
+        <div class="nav-links">
+            <a href="#home" class="container-icon-link" aria-label="Ir para o início"><i class="fa-solid fa-house"></i></a>
+            <a href="#about" class="container-icon-link" aria-label="Ir para sobre"><i class="fa-solid fa-info"></i></a>
+            <a href="#destinations" class="container-icon-link" aria-label="Ir para destinos"><i class="fa-solid fa-location-dot"></i></a>
+            <a href="#calendar" class="container-icon-link" aria-label="Ir para calendário"><i class="fa-solid fa-calendar-days"></i></a>
+            <a type="button" id="open-tutorial-btn" href="#" class="container-icon-link" aria-label="Tutorial"><i class="fa-brands fa-readme"></i></a>
+        </div>
+
+        <div class="radial-menu-container accessibility-controls-container">
+            <button class="radial-menu-toggle container-icon-link" aria-label="Opções de Acessibilidade" aria-expanded="false">
+                <i class="fa-solid fa-universal-access"></i>
+            </button>
+            <div class="radial-menu-items">
+                <button class="high-contrast-toggle-btn radial-item" data-high-contrast-toggle
+                        aria-label="Ativar modo de alto contraste"
+                        aria-pressed="false">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                </button>
+                <button class="font-size-control-btn radial-item" data-font-increase aria-label="Aumentar tamanho da fonte">
+                    A+
+                </button>
+                <button class="font-size-control-btn radial-item" data-font-reset aria-label="Resetar tamanho da fonte para o padrão">
+                    A
+                </button>
+                <button class="font-size-control-btn radial-item" data-font-decrease aria-label="Diminuir tamanho da fonte">
+                    A−
+                </button>
+            </div>
+        </div>
     </div>
     <div class="manage-audios-container">
         <button class="play-btn" aria-label="Tocar música"><i class="fa-solid fa-play"></i></button>
@@ -231,5 +237,15 @@
     <script src="js/accessibility/font-size-manager.js"></script>
     <script src="js/accessibility/keyboard-accessibility.js?v=20260531-2"></script>
     <script src="js/personal-1.js?v=20260531-2" type="module"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 </body>
 </html>

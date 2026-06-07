@@ -103,6 +103,10 @@
     transform: translate(-50%, -10%);
   }
 
+  .nav-links {
+    flex-direction: row;
+  }
+
   .container:hover {
     width: max-content;
   }
@@ -192,6 +196,41 @@
 }
 
 @media (max-width: 550px) {
+  .container {
+    width: 100vw;
+    height: 60px;
+    border-radius: 0;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    transform: none;
+    padding: 0 20px;
+    box-sizing: border-box;
+    overflow-x: visible;
+  }
+
+  #hamburger-menu-btn {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--color1);
+    width: max-content;
+    padding: 20px;
+    flex-direction: column;
+    border-radius: 0 0 20px 0;
+    transform: translateX(-150%);
+    transition: transform 0.3s ease;
+    z-index: 994;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
   .acessibility-tutorial-container {
     flex-direction: column;
     width: 10rem;

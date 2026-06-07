@@ -10,6 +10,7 @@ const parallax = () => {
         const clouds2 = document.querySelectorAll('.cloud2');
         const clouds3 = document.querySelectorAll('.cloud3');
         const sun = document.querySelector('.sun');
+        const moon = document.querySelector('.moon');
         
         scroll();
         window.addEventListener('scroll', function () {
@@ -29,6 +30,9 @@ const parallax = () => {
             });
             if (sun) {
                 sun.style.transform = `translateY(${value * 0.5}%)`;
+            }
+            if (moon) {
+                moon.style.transform = `translateY(${value * 0.5}%)`;
             }
         });
     })

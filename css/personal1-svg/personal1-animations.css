@@ -8,14 +8,15 @@
     --padding: 20px;
 }
 
-.sun {
+.sun, .moon {
     position: absolute;
     left: 45%;
     bottom: 10%;
     transform: translate(-5%, -50%);
     z-index: 0;
-    transition-property: trasnform;
+    transition-property: transform, opacity;
     transition-timing-function: ease;
+    transition-duration: 0.5s;
 }
 
 .clouds1, 
