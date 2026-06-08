@@ -4,7 +4,7 @@ const dequeueReservation = () => {
     travelDequeueBtn.addEventListener('click', async (e) => {
         e.preventDefault();
         try {
-            const req = await fetch('http://127.0.0.1:8000/reservation/dequeue', {
+            const req = await fetch('http://127.0.0.1:7000/reservation/dequeue', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

@@ -1,14 +1,14 @@
 const renderingPlaces = async () => {
     let placesJSON = {};
     try {
-        const req = await fetch('http://127.0.0.1:8000/places', {
+        const req = await fetch('http://127.0.0.1:7000/places', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
         });
         placesJSON = await req.json();
-        
+
     } catch(err) {
         console.error(err);
     }
@@ -28,10 +28,10 @@ const renderingPlaces = async () => {
 
         // Filling results arr. Goal: O(n) -> O(k)
         results = placesJSON.filter(place => place.name.toLowerCase().includes(searched));
-        /* 
+        /*
             for (i = 0; i < placesJSON.length; i++) {
                 const place = placesJSON[i].name.toLowerCase();
-        
+
                 if (place.includes(search)) {
                     results.push(placesJSON[i]);
                 }
@@ -55,7 +55,7 @@ const renderingPlaces = async () => {
             return;
         }
 
-        places.innerHTML = results.slice(start, end).map(place => 
+        places.innerHTML = results.slice(start, end).map(place =>
             `
                 <div class="place">
                     <div class="place-inner">
@@ -73,14 +73,14 @@ const renderingPlaces = async () => {
             `
         ).join('');
 
-        /* 
+        /*
             for (i = start; i < end && i < results.length; i++) {
-                places.innerHTML += 
+                places.innerHTML +=
             }
         */
-        /* 
+        /*
             prevBtn.addEventListener("click", () => {
-                
+
             });
         */
 
@@ -100,7 +100,7 @@ const renderingPlaces = async () => {
 
         /*
             nextBtn.addEventListener("click", () => {
-            
+
             });
         */
 
@@ -115,4 +115,3 @@ const renderingPlaces = async () => {
 }
 
 export default renderingPlaces;
-

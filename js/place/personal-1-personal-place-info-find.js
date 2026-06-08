@@ -1,6 +1,6 @@
 const placeInfoFind = async (placeId) => {
     try {
-        const req = await fetch(`http://127.0.0.1:8000/places/place/${placeId}`, {
+        const req = await fetch(`http://127.0.0.1:7000/places/place/${placeId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

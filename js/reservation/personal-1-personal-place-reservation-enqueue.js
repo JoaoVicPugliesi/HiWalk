@@ -67,8 +67,8 @@ const enqueueReservation = () => {
                 DTO.months = [...selectedMonths];
 
                 DTO.days =
-                    (31 - DTO.starting_day) + 
-                    DTO.ending_day;           
+                    (31 - DTO.starting_day) +
+                    DTO.ending_day;
             }
 
             const price = parseInt(placePrice.textContent);
@@ -90,7 +90,7 @@ const enqueueReservation = () => {
         const currentPlaceId = localStorage.getItem('current-place-id');
         DTO.place_id = Number(currentPlaceId);
         try {
-            const req = await fetch('http://127.0.0.1:8000/reservation/enqueue', {
+            const req = await fetch('http://127.0.0.1:7000/reservation/enqueue', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
