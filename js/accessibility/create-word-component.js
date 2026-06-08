@@ -4,7 +4,6 @@ function create_word_component(current_word) {
 
   for (let i = 0; i < current_word.length; i++) {
     const letter = current_word[i].toLowerCase();
-    console.log(letter);
     lettersHTML += `
       <img
         src="${base_url}${letter}.svg"

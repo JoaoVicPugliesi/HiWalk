@@ -8,6 +8,7 @@ import gsapLinks from './gsap/gsap-links/personal-1-gsap-links.js';
 import callTypewriter from './gsap/gsap-typewriter/personal-1-gsap-typewriter-call.js';
 import parallax from './parallax/personal-1-parallax.js';
 import gsapCar from './gsap/gsap-svg/personal-1-gsap-car.js';
+import gsapFox from './gsap/gsap-svg/personal-1-gsap-fox.js';
 import gsapSun from './gsap/gsap-svg/personal-1-gsap-sun.js';
 import gsapScroll from './gsap/gsap-scroll/personal-1-gsap-scroll.js';
 import displayPlaceInfo from './place/personal-1-place-info.js';
@@ -25,6 +26,7 @@ const initializeApp = () => {
     includeIllustrations();
     renderingPlaces();
     gsapCar();
+    gsapFox();
     gsapSun();
     parallax();
     load();
