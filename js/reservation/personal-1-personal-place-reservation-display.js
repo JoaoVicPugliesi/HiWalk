@@ -3,12 +3,12 @@ import placeInfoFind from "../place/personal-1-personal-place-info-find.js";
 const travelsContainer = document.querySelector('.travels-container');
 
 const displayReservations = async () => {
-    travelsContainer.innerHTML = ""; 
+    travelsContainer.innerHTML = "";
 
     let reservations = [];
 
     try {
-        const req = await fetch('http://127.0.0.1:8000/reservations');
+        const req = await fetch('http://127.0.0.1:7000/reservations');
 
         if (!req.ok) {
             travelsContainer.innerHTML = `

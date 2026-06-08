@@ -8,7 +8,7 @@ const placeCreateHttp = () => {
         const data = Object.fromEntries(formData.entries());
         const dataStringfied = JSON.stringify(data);
         try {
-            const req = await fetch('http://127.0.0.1:8000/place/create', {
+            const req = await fetch('http://127.0.0.1:7000/place/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
